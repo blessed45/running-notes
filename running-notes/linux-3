@@ -1,0 +1,310 @@
+                   LINUX 3 NOTES
+                  ===============
+In our last class we started seeing what is linux and how our job looks like as a devOps engineer
+so today we will be entrying to our fisrt module whis is a very important module, so take note
+
+As a devOps engineer i work with my team to;
+============================================
+develop: Applications
+Test: Applications
+Build: Applications
+Review and qualiry: Applications
+Secure: Applications
+Deploy: Applications
+Access: Applications
+Maintain: Aapllications
+Manage and monitor: Applications
+
+All these job is done by using automated computerise technologies
+
+e.g 
+    if you go to any credit union or bank, how do you access your account on the internet?
+    you can go to the bank's website  
+    you can be ask to enter your;
+        
+        login information
+        user name
+        caed number  
+    
+    to access your account, you some credentials and all those credentials are jobs done by devOps engineers
+    i.e all the log in imformation or registrations in banks are done by devOps engineers, so as a devOPs engineer,
+    you will work with your team of to develop, test, builded, review, secure, deploy, access, maintain, manage and minitor
+ 
+As we said, all this is done by using computarise automated solutions, so generally, if we use compurised solutions, this means
+computers are involve 
+ The big question here now is what types of computers are involve?
+
+PERSONAL COMPUTERS
+        
+        -laptops, phones, tablets, watches
+        - memory = 4gb, 16gb, 32gm, 64gb
+        - cost = $400-$2,000  
+
+PROFESSIONAL COMPUTERS
+        
+        -workstations, laptops, 
+        - memory = 8gb----256gb
+        - cost = $700-$20,000
+
+ENTERPRISE COMPUTERS
+          
+          -servers
+          - memory = 128gb----4000gb
+          - cost = $2,000-$200,000
+
+But our job is to help companies using computerise solusions either by going to the market to buy servers and come 
+and install or we use cloud service providers (CSP)
+So today, most companies move to the cloud service providers (CSP) for servers , these companies have a lot of computers 
+that they have configure then together, network them and just waiting for companies
+
+DEMO    
+    Any demo that will illustrate a fast service to a slow one
+
+CSP = clod service provider
+e.g
+   AWS, AZURE, GOOGLE, ALI BABA etc
+
+Let us look at
+
+BSP - FINTECH: Banking service provider
+what we can do in a bank
+             
+             create account, tranfer money, exchange, withdrawal, cash deposit,
+             cheque deposit, loan, overdraft
+
+for this work to be done, a bank like ECHO bank will need to imploy like 900 workers 
+to be executing this job and most of them do this job manually, 
+
+Now devOps engineers develop, test, build, qualify, deploy, manage and monitor applications
+e.g eletronically you can do anything now without neccesarilly going to the site,
+       
+       you can now create an acoount online, buy online, there a lot of things that we do now online,
+       here you are ask just for neccesary credentials, like
+               
+               username 
+               email
+               password 
+               card number
+               phone number
+               postal code, etc
+
+Let us noe see why DevOps engineers are being paid high,
+This is because their main job is helping companies to make a lot of money
+they continuesliy intergrate and deploy using automated solusions not manually
+
+what banks do now is that, they fire more of thier manual workers and imploying devOPs engineers.
+This is because the job that 200 worker can do manually in a company can be executed by at most 4 devOps
+engineers, so you see now that companies pay them high and yet still save more money since they have less workers
+
+DEMO
+    Any mathematical illustration of how a company make moere money by employing few devOps engineers and sacking
+    more manual workers
+
+At this juncture, we will create another linux server to those are still unable to create a server 
+
+ server
+        name = dbserver
+        ip-address      = ?
+        username        = ec2-user
+        password        = ?
+        ssh private-key = atango
+
+we learn in our last class that when we create a server, it come with the ip-address and a user called ec2-user
+So to access an ec2 instance/server we need the above credentials, with all that put in place, we can now connect 
+to our server through ssh protocol
+
+            ssh -i public-key username@serverip-address   # when using a key pair
+            
+            ssh username@serverip-address                 # when using password 
+DEMO
+    create a new server and connect to it using different methods
+
+we run this course for like 5-7 months because we want you guys to know hardcore IT from end - end
+Don't worry, as we move on, the course will be deply to you simlessly ,
+So you see, in two minutes, we have launch a server,
+this is what a company does for 1million CFA 
+
+in our last class we started looking at some few commands, so we will proceed with that from here
+
+DEMO
+    - revise the pass command that was treated in the last class,
+    - illustrate with examples and create more files and directores
+    - do it to the undertanding of every one
+
+These are commands that will help use to navigate a directory
+
+Now let us look at commands to manage files
+
+ FILE MANAGEMENT COMMANDS
+===========================
+
+The command to create a file is called the 'touch' command
+
+       touch = creates a file
+
+TICKET 002
+Create the following files
+      
+      list.txt
+      hello.py
+      greet.sh
+
+OPTIONS 1
+     
+     touch list.txt
+     touch hello.py
+     touch greet.sh
+
+As a devOps engineer, your job is to automate task, though we can create these files one after another,
+if you do that , you are a junior engineer, as a devOps engineer, you must always take automation to 
+another level, we can be using GUI as is we are typist, even when we use CLI, we must automate.
+The second option will automate the task
+
+OPTION 2
+        
+        touch list.txt hello.py greet.sh
+
+Now can see that just with one command, all the files have been created, this what we called automation.
+
+We have seen how we can create a file but all the files that we created are empty files,
+we will now see how we can create files and add content
+
+let say you first day at work , you are assign a ticket,
+
+  Creat a file (list.txt) and add content      
+
+1) emmanuel
+2) ernest
+3) vitalis
+4)paul
+5)john
+
+Please take note about what we are about to do now, because when ever we reach at juncture, most foxs
+get confuse, so i will expert some of you to get confuse but just pay kind attention, you will understand 
+all what is needed of you here, the course will be deployed in such a way that every body will have a full
+mastering of it,
+
+Here,
+     we will look at a new command called 'vi'
+
+This "vi' command has a command mode and an insert mode
+
+you start accessing the file in command mode
+when you 'vi' you are in command mode, in command mode, you cannot modify or add content
+to start modification ro addition of content, press letter 'i' on your keyboard,
+when you do this, it takes you to the 'insert' mode and to get out of the 'insert' mode back to 
+the command mode, press the 'Esc' key on you keyboard, 
+Now in command mode, for you to save and quite, you press ':wq!'   
+
+If you want to add modify the file , you still 'vi' into the file, press the 'i' to enter insert mode,
+the 'Esc' key to go back to the insert mode, then ':wq!' to save and quite
+
+If you make a mistake with the file and to quite without saving, you go back to command mode and press
+':q!'  
+
+There is also a shortcut to save and quit
+do a quick double press on the 'shift+z' key to save and quit = press+hold
+ i.e
+     press the shift botton and hold, then double click on letter z
+
+DEMO
+    illustrate a couple of examples on this
+
+When it comes to modifying files, we can use text editors
+e.g 
+   of test editors thst can be use to modify files include
+
+in windows
+          sublime text
+          notepad++
+          braket
+          vs code
+          atom
+          eclips          
+
+when developers are writing codes, they text editors for coding and 
+later copy and paste, they do this to be sure before deployment, they don't 
+get directly into vi
+
+We have seen how to create a file and add content and modify a file
+
+Let us now see how we can read content in a file
+
+to read the content of a file, the command to use for that purpose is the 
+
+  'cat' = this command will read or display the content of a file
+
+so to do that we run the command as folow
+
+    cat filename
+
+If we want to display the content of a file with all it's lines numbered, you pass the -n ,
+
+    cat -n filename  
+
+There some other commands that can be use to display the content of files, such as the;
+
+        head = will displays the first 10 lines of the file
+                    
+                        head filename 
+for the last 10 lines
+         
+         tail = will displays the last 10 lines of a file
+
+                        tail filename
+
+If you want to get the first 5 lines or last 5 lines , run
+
+                        head -5 filename
+                        tail -5 filename
+
+We also have the less and the more commands that are usede to display files
+
+                less filename
+                more filename
+
+when you use the less or more command, press q to get out of the file
+
+For backup, we create a copy of the file  
+
+       BACKUP FILES
+The command to create a copy of a file is 
+
+  cp = creates another copy of your file
+        
+          cp filename 
+
+We have a command used to rename files, this command is the;
+
+      mv = rename and/relocate files
+
+      mv filename newfilename
+
+When it comes to file management, we can create files, add content to files, move files from 
+one directory to another
+
+We can also;
+
+- delete files
+    
+           rm filename = will deletes a file
+
+           wc filename = word count command
+
+           wc -l filename = displays number of lines in a file 
+
+if you want to create a link to a file, the cvommand is;
+
+           ln filename linkname = creates a hard link of the file
+
+hard links are like copy of the file, there is also a soft link called a symbolic link
+to create a symbolic link, run
+
+            ln -s filename linkname  = creates symbolic links
+
+DEMO
+     - Create some hard and soft links of files and demonstrate the differences             
+     - differentiate between hard and symbolic link
+
+
+
