@@ -1,0 +1,271 @@
+                     LINUX 5 NOTES
+
+As we know, as DevOps engineers, we work hand in hand with our team to;
+            
+        develop
+        test
+        build
+        reviw and qualify 
+        secure
+        deploy
+        maintain
+        manage and monitor
+ software and applications using computerise solutions
+
+As a DevOps engineer, the only task that we are not directly involve is the first one (development)
+and software engineer, the rest we are directly involve
+
+Here are some examples of job that we will be doing as DevOps engineers
+
+  DevOps engineer
+  DevSecOps engineer
+  cloud engineer and/or
+  AWS cloud engoneer
+  platform engineer
+  Infrastructure engineer
+  Kubenetes engineer or
+  Sr. IT recruiter
+  IT project manager
+  Scrum master
+  Build and release engineer
+  SRE
+
+DEMO
+     illustrate some few platforms 
+     demonstrate with diagrams how users are able to connect to the server while
+     performing task.
+e,g  
+   linux, windows etc
+If you can work only one platform or several platforms, perfoming task/workload such as
+      
+          - troubleshooting and fixing problems resulting from platform failures
+          - enhance the platform by doing some, upgrates, updates,patches
+          - securing the platform
+by doing all these you are platform engineer
+
+In our last class we look at some certain commands,
+
+i.e
+     umask
+     chmod
+     chown
+     chgrp  
+
+DEMO
+    connect to created server and do some revision
+    continue with more commands demoanstrations
+    'ls' into a file that has more content and demo the 'grep' command 
+
+In linux, there is a command use to extract pattens from files and that command is known as the;
+     
+          grep  =  sort pattens from files
+DEMO
+    demonstrate, with a file that have repaeted names, some with upper case letters and illustrate
+    how the grep commands works and explain the case sensitiviy in linux
+
+To ignore the case sensitivity, run the command with the -i flag
+
+               grep -i = will ignore case sensitivity
+
+The next command we will look at is the pipe '|' command
+the pipe enables the output of a command to be the input of another command or 
+the next command
+
+please take note
+
+IQ
+ a) what do you undertand by the grep command in linux
+
+ANSWER = the grep command is used to extract pattens from files
+ 
+b) explain the difference between the grep and the pipe commands
+
+DEMO
+    - lllustrate how a file can be read and the output stored temporally by the pipe command and
+      extract some file content using the grep command
+    - demonstrate diagramatically for better understanding
+    - use a watertank , pipe and house deployent demo  
+    - illustrate cat /etc/passwd
+
+There is a command that is use to re-arrange a file in alphabetical order and that command is known as the,
+the sort command
+                  
+                 sort = re-arrange the file in alphabetical order
+DEMO
+     - run the 'sort' command to show how it re-arranges the file in alphabetical order
+     - also run the cat /etc/passwd | grep (anyname) | sort
+     - run the grep command while ignoring the case sensitivity [grep -i]
+
+There are other commands such as ;
+
+      find = search for files and directories
+
+here we run the commads as follw
+
+    find  (where you want to search for the file)  filename 
+    fine /home/ec2-user filename
+where /home/ec2-user is the home of ec2-user, that's whee we want to search for the file
+the home of ec2-user can still be represented by ~
+
+               fine ~ -name filename
+               fine / -name filename  = / is the root directory
+
+To seacrh for file in your present working directory 'pwd'
+you run ;
+               fine . -name filename
+DEMO
+     run some few examples demonstrating the above commands
+
+We can also set the date of our server using the 'date' command 
+
+               date = shows you the date of your server
+
+               sudo date -s  = sets the date of you server
+
+you will realise that these servers we are working on will be use to schedule jobs, let us assum that
+we have schedule that a process in our server should backup data every 12 midtnight, should anyone be able to 
+change the date? The answer is NO , so that is why you must be duty authorise before setting the date od a server,
+so you have to run the command as the root user as follow
+
+                  sudo date -s [date, time]
+ 
+DEMO
+    set the date and time of the server for better understanding, do it first as normal
+    user and see the error then as root user
+
+We can also change change the timezone by running the command
+    
+         sudo timedatectl list-timezones
+
+after running the command copy your prefered timezome and run it as follow to set the timezone
+
+               sudo set-timezone timezone
+
+This is user management, so take note
+The big question here is who to do what and at what time in the server
+
+In linux, we have what they called the normal user and the root user
+
+The root user is a the admininistrator/admin/super in the server that can run all commands and task
+unrestricted
+
+In linux, the root user is called root
+when you create a linux server, the root user is created by the system when a server is launched/created
+
+We also have normal users
+   The normal user is created by the root/admin user
+
+If we want to create a user in our server, the command is very simple, the command is;
+
+               adduser
+               useradd
+But for us to creat this user account, we need root access/ admin access
+i.e
+     sudo adduser username
+     sudo useradd username
+
+For e.g you are given a task, create users accounts for emma and ernesrt verify
+
+Remember when we run commands with sudo, we are running the command as the root user 
+ 
+DEMO
+    - create account for emma, start by doing without the sudoers access before applying
+      it for better clearity
+    - do more demonstrations
+    - demo sudo -u ec2-user adduser for normal user and sudo -u root adduser for root user
+
+Now to verify if the user was created or not, there is a file where when ever you create a user
+in the system, the user imformation is stored there and is known as the  /etc/passwd, so if we
+'cat' this file or grep for the name in the file or tail the file  
+we will see if the user was created or not
+i.e
+     cat /etc/passwd  =  allows you to check for user information 
+     grep username /etc/passwd
+     tail -2 /etc/passwd
+
+Or you check it in the /home directory with the 'ls' command 
+
+DEMO
+      'cd' into /etc, 'ls' and do some illustrations
+
+When it comes to accessing files, we have we called the relativePath and absolutePath
+
+                relativePath  = starts from pwd
+                absolutePath  = starts from the root directory (/)
+DEMO
+    
+To assign or modify pass word for a user, we use the passwd command
+i.e
+           passwd = use to either assign or modify user's password
+
+Note that, to change the password of a user, u must have root access
+
+               sudo passwd usernsme
+
+But to modify your own password, you don't need root access
+
+To switch from user to another, we use the commnd 
+
+               su
+
+For e.g if you want to switch user as root, execute
+
+              su - root
+NOTE ,
+      if you connected to a server as a created user and want to switch to another user,
+      the system will ask you for the user's password
+Don't bother, you are going to have a whole book when you start working that contains most
+of these commands
+
+So to switch to another user, use 'sudo'
+
+      sudo su - username 
+
+The root user root run all commands without restrictions , so take note that it not advisable
+to be running task/workload in the system as a root user, for security reasons, always run task 
+as normal user
+
+DEMO
+     - demo as root user and normal user
+
+          $ = normal user
+          # = root user
+         
+      - assign password to a user and use to illustrate some few examples
+      - emphacise the login imformation given by the server during a failed
+        log in
+      - Switch to a user created and try to switch to root user 
+      - illustrate the information given by the system
+      - explain why you can not use sudo access as normal user to switch
+        to root user,
+
+As a normal user [created user] you can not switch to the root user or any other user, unless
+you are given the previleges to do so, 
+To do that, there a file called the /etc/sudoers , so the admin user will vi into this file 
+and add the the user's name whose previleges are to be elevated
+
+i.e       GRANTING SUDOERS ACCESS
+
+           sudo vi /etc/sudoers
+
+when u modify the file, to save and quit press [:wq!] then [enter]
+
+search for the sudoers line and insert the name
+
+OR,
+   Just run the command
+  
+     sudo echo "username ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/username        
+
+NOTE,
+      by default, the ec2-user comes with sudoers access
+
+DEMO
+     - 'vi' into the sudoers file and grant sudo access to a created user
+     - also run the second command to illustrate  
+
+Note that it is preferable to copy the second command and keep it safe so as to
+always copy and paste when ever you want assign sudo previleges to a user 
+
+
+
