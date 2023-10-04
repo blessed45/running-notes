@@ -1,0 +1,342 @@
+                        LINUX 7 NOTES
+
+All these while we have been looking on some linux commands and we discussed that
+as a DevOPs engineer, our work is to ;
+
+             develop            - applications
+             build              - applications
+             test               - applications
+             review & qualify   - applications
+             secure             - applications
+             access             - applications
+             deploy             - applications
+             maintain           - applications
+             manage & monitor   - applications
+We realise that to accomplish all these tasks, we need computerise solutions
+and for us to us computerise solutions, that means computers are involve and we 
+saw that a computer is made up of two components,
+       
+       the hardware
+       the software
+
+and these tasks are being done either by using the;
+
+          GUI
+          CLI
+QUESTION
+         Explain you experience with linux systems
+
+ANSWER
+       My experience in linux systems/servers include;
+
+       - running workload using the 
+           GUI or CLI
+       
+       - managing files using;
+           1) touch command to create files
+           2) vi command to modify files
+           3) ls command to list content of directories
+           4) umask command to set file permissions
+           5) chmod command to set file permissions
+           6) find command to fine files
+           7) grep command to sort pattens from s file
+           8) sort command to rearrange a file in alphabetical order
+           9) sed command to replace/change content of a file
+          10) echo command to print content in a file
+          11) cp command to copy a file
+          12) mv command to move a file
+          13) cut command to cut portion of a file
+          14) pipe command to enable the output of a command to become the input of another
+          15) ln -s command to create soft link of a file           
+          16) awk command to extract portion of a file 
+          17) cat command to read content of a file
+          18) > command to redirect content to a file
+          19) >> command to apend content to a file
+          20) ln command to create hard link of a file 
+          21) rm command to remove a file
+          22) cd command to navigate directories
+          23) mkdir command to create a directory
+
+       - managing users using;
+           1) adduser command to add user to the system
+           2) userdel command to delete a user
+           3) usermod command to modify a user
+           4) chage command to to change the default configuration of a user
+           5) group add to add a group
+           6) passwd command to assign a password to a user
+           7) passwd -l command to lock a user's password
+           8) gpasswd command to delete user from a secondary group
+           9) groupdel command to delte a group    
+
+      - managing and monitoring the system using;
+           1) df -h  command to know hw much storage the system have and hw much has been consummed
+           2) du -h command to know how much storage the system has comsummed     
+           3) sudo hostname newname command to change hostname
+           4) sudo hostnamectl set-hostname newname to set new hostname
+           5) date command to check system date
+           6) sudo timedatectl set-timedate [date time] command to set date and time
+           7) sudo timezonectl list-timezone command to list tme zone
+           8) sudo timezonectl set-timezone timezone command to set time zone
+           9) who command to know who is connected to the system
+          10) w command to know if users connected to the server are doing some work or not
+          11) free command to know the total memory of the system, how much is used and/or free
+          12) whoami command to know who you are
+
+      - managing processes
+           1) top command
+           2) ps -ef command
+           3) jobs command
+           4) kill command
+           5) bg command     
+           6) fg command
+      
+     - managing packages
+           1) wget command
+           2) yum command
+           3) rpm command
+
+     - managing services
+          1) systemctl start/stop/enable/status/disable
+  
+     - security management    
+          1) passwd command
+          2) selinux
+          3) firewale 
+
+
+                 PACKAGE MANAGEMENT 
+
+Here we download packages and/or softwares to ease our task
+download the following packages
+
+    ssh client: mobaxterm, puTTY, gitbash
+    text editor: sublime-text, brackets, vs-code, notepad++
+    study platforms: zoom, telegram, whatsApp desktop
+
+these softwares will make your computer to give you the study experience you need
+
+Package management is a big deal when we are trying to automate automation
+in linux we have some text editors such as 
+    vim, nano,
+some these editors are packages that need  to be install in our server
+we can use these text editors to modify our files
+
+For us to install a package, we use package managers
+examles of package managers include;
+    yum/dnf    = package managers for redhat/centOS
+    rpm        = general package manager for redhat systems
+    chocolatey = package manager for windows
+    apt        = package manager for Debian/Ubuntu 
+ 
+Now in aws, we have created a redhat server, so can install our packages 
+Note that when you install packages, it can do some changes in you server
+let me ask you this question, should any user be able to install packages in the server?
+the answer is NO, so to install packages, you need sudo access
+i.e 
+          sudo yum install package/packages
+
+To auto approve the process, use the -y flag at the end
+i.e 
+         sudo yum install package/packages -y 
+
+After we install a package and no longer need it again, we can delete it;
+   
+          sudo yum/dnf remove package    
+
+To download packages from the internet, we use the ;
+       
+          wget = non interactive network downloader
+
+DEMO
+     - install packages
+     - install wget and downoad a package e.g apache maven
+
+In our last class when we talk the linux file structure, we saw that packages should be installed
+in the opt directory, so the recommended directory for us to always download packages should be the 
+opt directory, everything in the opt directory is oen by the root user so to install any package there,
+root access id required
+ 
+We are explaining the fack that when it comes to linux, you experince is managing packages
+and we can also manage process as well
+
+DEMO
+    - diagramatical illustrating of users connected to a server ding different tasks , like
+      five of them, managingfiles, managingpackages, managingsystem, managingservice, 
+      managingprocess, backingup data etc
+
+Anything that we do in the server is a process in linux thus the need for process management
+
+                PROCESS MANAGEMENT
+
+             FileMGT
+             UserMGT
+             ProcessMGT
+             SecurityMGT
+             PackageMGT
+             ServiceMGT
+             SystemMGT
+             Monitiring
+             dbBackup
+
+Tasks are processes running in the system
+we have commands here like;
+
+       top command
+
+DEMO
+     run the top command and explain while laying emphasis on load average
+     be remimded of the fact that load average is on 1
+
+IQ
+   what is load average in linux
+ANSWER
+      the load average tells you how much load a system is carrying
+
+To make sure that your system don't break, load average should be highly considered,
+this is because, when the load average is high, the server can come down or will run
+very slowly
+
+    
+Every task/workload we do on the linux server is a process, by such;
+processmgt is very important,
+its through processmgt that we can know and correct the state at which our server is 
+running, processes that have no use in the service can slow down the server and make 
+it to malfunction or slow down, e.g of such processe are the zombie processes or the process with z in STAT column
+
+
+the 'ps', 'ps -ef', 'ps -f', command will display the state of all processes in ur server
+
+NOTE: Every process has an ID known as the process ID [PID]
+
+if we find out that there is a process in the server that is not useful, we can kill the process
+ by using the 'kill PID' command and the process will be killed
+
+i.e
+
+kill PID = kills a process with said ID
+
+HOW TO FIND IF A PROCESS IS NO LONGER USEFUL BEFORE DELETING
+=============================================================
+
+We run the command;
+'ps - aux' = this will display the content of processes running in the server, look for the column with 
+letter 'Z' and kill the process by using the PID as shown above
+
+or better still, we can run the command
+
+ps -aux | grep Z = this command will display all processes that are in the zombie state. showing the process
+ id [PID] , parent process id [PPID] and the command that was use to start the process  
+
+HOW TO KILL A zombie PROCESS
+=================================
+We run the command;   
+
+'kill PID' = this will eliminate the zombie process and thus speeds up ur server
+
+To forcefully kill the process; run,
+
+'kill -9 PID' = it will forcefully delete the process if the later did not work 
+
+Istall apache httpd and check if the servive is running
+
+         ps -ef | grep httpd
+         
+DEMO
+    - do illustrate more examples
+    
+                 
+                      SERVICE MANAGEMENT
+      
+      service servicename arguements
+      service servivename start/stop/status/enable/disable/restart
+      
+      systemctl arguements servicename
+      systemctl start/stop/status/enable/disable/restart servicename
+
+DEMO 
+     start some services, check their status
+
+Q
+      Exlain your expereince with linux systems
+      ==========================================
+
+My experience with linux systems include;
+    1) deploying, povisioning and creating linux servers in AWS cloud,
+       connect to servers using - ssh protocol
+
+    2) configuring, optimising, commissioning, decommissioning and securing linux servers
+
+    3) running workloads in linux servers/systems using;
+            GUI
+            CLI
+            SCRIPTS
+   
+     examples of workload/tasks executed include
+
+             FileMGT
+             UserMGT
+             ProcessMGT
+             SecurityMGT
+             PackageMGT
+             ServiceMGT
+             SystemMGT
+             Monitiring
+             dbBackup
+
+We commission a server by installing the application software in the server
+and decommissioning is uninstalling the software 
+
+As we move on with the course, we will see how to automate task using scripts and cron table
+
+with cron tables we will see how to schedule and automate tasks
+we say something like 
+ 1) Backup all databases every midnight
+ 2) desplay the latest version of the application every sunday at midnight
+ 3) optimise our appservers every month on the 28th day
+      like ; yum update -y && yum upgrade -y
+ 4) monitor system resources and sent send alert using threshold every minute
+      like ; if cpu/mem usage exceed 80% sent email df -h = cpu
+
+these are the kind of tasks we are going to be seeing through out the course
+
+  ARCHIVE/DATA BACKUP COMMANDS
+
+To backup database, we either copy the file or we zip or tar the file
+i.e
+       zip   =  package and compress(archive) files
+       unzip = Extract compressed files in zip archive
+       tar   = use to archive a directory/file
+
+DEMO
+     - vim into a file with much content and zip the file
+     - install the zip package
+     - zip file to a file called filename.zip
+     i.e
+         zip newfilename.zip filename
+    
+     - compare the volume of storage consummed by the file and the zip file 
+Note when you zip a file, there is no need to keep the original copy, so you delete it,
+because if the file still exist, you will not be able to unzip the file
+
+to tar a file, we run;
+
+      tar -cvf newfilename.tar.gz filename  =  compress a file
+      
+      tar -xvf filename.tar.gz              =  extract compressed *.tar.gz file 
+
+DEMO
+     ceate a tar file and extract the file
+
+
+You ahve a blocker, how will you resolve it
+==============================================
+1) check company's documentation--- running/pdf notes , videos
+2) contact team members
+3) use AI platforms [google, youtube, chartPGT
+4)communities
+
+
+
+
+
+
