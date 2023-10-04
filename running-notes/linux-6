@@ -1,0 +1,281 @@
+                     LINUX 6 NOTES
+
+All these while , we have been look some linux commands
+we have learn how to create files, navigate directories and lot more
+
+In our last class we saw how we can authorise a user to run task as the root user by assigning
+sudoer access to the user
+Today, we will continue to see hw task on the linux system with relative ease,
+We started talking about user management and realise that when it comes to user management,
+
+   User management includes;
+
+   - creating groups
+   - ctreating user's account
+   - assign password to uses
+   - add users to groups
+   - modify user's account
+   - delete a user
+   - elevate user's privileges
+   - re-set user's password
+   - lock a user
+   - set expiration date for user's account/password
+   - assign task to users
+   - grant and remove admin/sudo privileges
+
+Creating user's account requires sudo/root privileges
+We saw in our last class we can assign sudo privileges to a user
+
+Now let see how we can assidn password to users
+To do this, we all know that you must be authorise and we have already seen how to authorise a user
+If you have sudo access, you can assign a password to a user
+i.e
+               sudo passwd username
+
+the above command will permit you to assign a password to a user    
+
+We can also create groups in the system and this also needs sudo access
+i.e
+               sudo groupadd groupname
+
+         sudo groupadd group-A && sudo groupadd group-B && sudo groupadd group-c = task automation
+                                  # you can use && or : to seperate the commands 
+
+We can add users to groups
+e,g
+  a user's account is created and that user is an engineer, so, we have to add the user to the engineer's 
+  group 
+This is done by using the command known as 'usermod'
+i.e
+                sudo usermod -aG groupname username
+
+the above command will add a user to a secondary group, secondary group because when a user is created in 
+the system, the user comes with the user's home directory/users group
+
+We can delete a user from the system and to do that you need sudo access 
+this is done by the 'userdel' command
+i.e
+                sudo userdel username
+
+note that this command will delete the user without the user's home dierctory
+
+But if you want to delete a user with the user's /home directory, add the -c flag
+i.e
+               sudo -r userdel username
+
+this will delete the user with the user's /home directory
+
+Please take note of this command,
+To delete a user's hone directory after the user have been deleted without the /home directory,
+run the command;
+
+                   sudo rm -rf /home/username
+
+This will delete the user's home directory with relative ease
+
+And to delete a user from a secondary group is what you should also take special note of.
+To do that, run the command;
+
+                  sudo gpasswd username groupname
+
+Take note of the above command 
+
+There is a file called /etc/group
+So if you want to verify the number of groups existing, you cat the file
+i.e
+                  cat /etc/group
+
+Now if you want to know a group that a user belongs to, there is a command called 'id'
+run the command and it list all the groups that user belongs to
+i.e
+                 id username
+
+DEMO
+     illustrate series of examples
+
+Elevate user's previlieges
+For you to achieve this task, as we saw in our last class, we can;
+
+                 sudo vi /etc/sudoers  
+                 sudo visudo
+
+either you vi in the file and modify it or you run the below commnd
+
+                 sudo echo "username ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/usernam
+DEMO
+     - demonstrate while explaining detailly for more understanding 
+     - grant sudo access to some created users in the system or create new users and and assign 
+       sudoers access to them
+     - assign password to users 
+     - switch from one user to another
+
+Note at this juncture that , when a user is granted root/sudo access, that user can perform 
+tasks/workload as the root user, 
+i.e
+   the user has elevated privileges and can now run tasks/workloads like;
+   assigning password to users and any other task done with those privileges
+
+DEMO
+     switch to a user with elevated privileges and assign password to anothe user
+
+To remove sudo access from users, vi into the /etc/sudoers file and modify the files
+by deleting the user from the sudoers file
+
+DEMO
+     illustrate how to remove a user from the sudoers file
+
+For example if someone is at work and not doing anything, what do you think we can do to that
+type of a person? We can lock that person's account, and for us to do that, the command is;
+
+                      sudo passwd -l username
+
+to unlock back the account, we are going to run the command;
+
+                      sudo -uf username
+
+Take note that when you unlock a user's account, that uer's password will no longer exist,
+so a new one will need to be created
+
+To set expiring date for user's account/password
+we all know that this are admin tasks, so sudo access is required
+and the command is;
+
+                     sudo chage username
+
+DEMO
+    illustrate while explaining all the parameters
+    i.e
+       minimum password age [0]:
+       maximum password age [99999]:
+       last password change (YYYY-MM-DD) [2023-08-31]:
+       password expiration warning [7]: 10
+       password inactive [-1]: 10
+       Account Expiration Date (YYYY-MM-DD) [-1]:
+
+So with this chage command, we can set some default value for a user
+
+Now we have understood some basic user management commands
+
+
+HOW CAN A USER ACCESS THE SERVER/EC2 INSTANCE EXTERNALLY USING PASSWORD
+Take note of this, it's very important
+ 
+For you to do that, the server must be configure such that it can be access externally
+There two ways of doing that;
+
+1) copy the follow two commands and paste;
+
+                         sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes"
+                         sudo service sshd restart
+
+OR
+
+2)   We vi into a file called (/etc/ssh/sshd_config) and change passwd authentication = NO to passwd authentication = YES
+after that, save and quite
+
+                           vi /etc/ssh/sshd_config
+
+once you do that, restart the ssh service by running; 
+
+                          sudo service sshd restart
+
+this will finish confuring ur change
+
+     Note that even with all credentials of a server;
+i.e
+      server ip-address
+      username
+      password 
+
+You can not access the server externally, except it is the server has been configured
+in such that it can be connected to externally
+
+And note that when ever you do a change in the ssh service / configure a server, you
+must restart the service, if you do not, the changes will not be executed by the server
+
+I recomment for you to always use the first method of copying the two commnds and paste
+because if you vi into that file and mess it up, you will not be able to log into that server 
+again, either through ssh or password and/or externally
+ 
+DENO
+     - demonstrate with the vi command and run the 1) command
+
+
+At this point, i think we are done with user management commands and don't worry, the cousre will
+be deploy in such a way that everbody understand 
+
+From here we will be looking at commands to know who is like connected to your system and what are
+they doing and at what time they were connect, we are talking of commands that can be use to manage 
+our system, known as system management commands or system resources management commands
+
+
+                    SYSTEM MANAGEMENT COMMANDS 
+ 
+
+To know who is connected to ur server and at what time the user got connected and where user is 
+connecting from[ipaddress], we have a command called the 'who' command, when this command is runned
+on the command line as;
+                     
+                        who
+ 
+you will have a display like this below
+
+                 username              date      time    ip-address(where)
+               ec2-user pts/0        2023-06-24  10:30    (129.0.226.22)
+               ec2-user pts/1        2023-06-24  11:18    (129.0.226.22)
+               ec2-user pts/2        2023-06-24  11:44    (129.0.226.22)
+               atango   pts/3        2023-06-24  12:21     (129.0.226.22)
+
+DEMO
+    - Diagramatical illustration of users connected to a server and performing task
+    - assign password to a user in your system and ask users to connect to it and
+    - run the 'who' command and expain for more clearity
+
+we also have other commands like;
+
+
+               wc = the word count command
+
+ If you want to know if a user connected to the server is doing some work or not; we use the 'w' 
+command
+              w  = tells u how long ur server has been up and running, who is logged in and 
+                   if the person is doing some work or not
+
+To see/know the list of all users connected to the server, run the command;
+           
+               users 
+
+And will list out a compact list of all users connected to the server           
+
+DEMO
+     Run all the commands bellow
+
+             whereis = gives you where a command is found in your server 
+
+             df -h = tells you hw much storage you have and hw much you are consuming
+
+             du  -h = will tells you how much storage you have consume      
+
+             date = use to check the date
+
+             date [date time] = set the date of the server
+
+             sudo timedatectl list-timezone = will list all the time zones
+
+             sudo timedatectl set-timezone timezone = will set time zone
+
+             sudo hostname  = wil show your hostname
+
+             sudo hostname newname = will change you hostname
+
+             sudo hostname set-hostname newname = sets the server hostname perminently
+
+             ifconfig (or) hostname -i (or) ip -a  =  will display the private ipaddress of ur server
+             curl ifconfig.co         
+
+
+
+
+
+
+
