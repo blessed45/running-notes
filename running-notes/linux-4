@@ -1,0 +1,287 @@
+                      LINUX 4 NOTES
+
+From our last class, we saw that our job as devOPs engineer is helping companies to 
+achieve thier end products with relative else, so we help companies by;
+
+         developing           = applications
+         test                 = application
+         build                = application
+         review and qualify   = application
+         secure               = application
+         deploy               = application
+         access               = application
+         maintain             = application
+         manage and monitor   = application
+
+we saw that for us to achieve this, we need automated computerised solutions
+i.e
+   we either use GUI or CLI
+So a devOpS engineer, which of this will you prefer to use? GUI or CLI?
+
+We also saw how we can create a server and connect to it
+We also look at some few commands
+e.g
+   how to create a user       = sudo adduser username
+   how to create files        = touch filename
+   how to create dirctories   = mkdir dirname
+
+What else do we look at? 
+
+We also saw how to create files and add content and some directory navigation commands like
+'cd'
+
+How did we connect to our server? remember we need some credentials to connect to our server
+ 
+NOTE
+     you cannot run any task on your server unless you are connected to your server
+and to do thet you need;
+       
+                   a computer
+                   mobaxterm
+                   servers ip-address
+                   username
+                   ssh key/password
+                   
+DEMO
+    illustrate with diagrams how to connect again to the server and make known the fact that
+linux servers are multi-tasking
+i.e multiple users can connect to the server at the same time and that members can have different
+task assign to them , like one being incharge of data bases, another for creating files, other for 
+monitoring, others for app deployment,
+Make known of the fact that engineers do not need to go to the job site before executing task, they 
+set at home any where and still work, also linux is a multi-user and multi-tasking, many engineers can connect 
+to the linux OS at the same time and performing different task
+
+      LINUX SYSTEMS/SERVERS ARE;
+
+- multi-user
+- multi-tasking
+- case sensitive    
+
+Since linux servers are multi-tasking, what problems do you thing 
+can be encountered by users on the system?
+
+In our last class we looked at some file management commands
+
+        FILE MANAGEMENT COMMANDS
+
+  touch                      = creates a file
+  vi                         = create a file /or modify/edit a file
+  cat/head/tail/less/more    = permits you read a file
+  wc                         = word count command
+  cp                         = copy a file / create backups
+  ln                         = creates symbolic links
+  mv                         = re-name or migrate a file or directory
+
+
+There are some other file management commands that we need to take note of
+when we create a file, it has what is called a file permission
+e.g
+     drwxr-xr-x. 3 ec2-user ec2-user 17 Jun 19 17:33 dev
+     -rw-r--r--. 2 ec2-user ec2-user  1 Jun 19 14:33 mytest
+     -rw-r--r--. 2 ec2-user ec2-user  1 Jun 19 14:33 test      
+     lrwxrwxrwx. 1 ec2-user ec2-user  8 Jun 20 18:29 test.txt -> test.txt
+
+
+     1       2      3    4        5        6           7         8
+     d  rwxr-xr-x.  3  ec2-user  ec2-user  17  Jun 19  17:33    dev
+     -  rw-r--r--.  2  ec2-user  ec2-user  1   Jun 19  14:33    mytest
+     -  rw-r--r--.  2  ec2-user  ec2-user  1   Jun 19  14:33    test      
+     l  rwxrwxrwx.  1  ec2-user  ec2-user  8   Jun 20  18:29    test.txt -> test.txt
+
+In this file structure, we have what is called the field of the file or directory
+
+       FIELDS FOR FILES
+       =================
+
+       r = read
+       w = write
+       x = execute
+
+       1) type  =  here;    [- = stands for a file,  d = stands for a directory and l = stands for a symbolic link]
+       2) permossions       [ rwx,    r-w, r-x ]  
+       3) number of lonks
+       4) owner
+       5) Group owener
+       6) size of the file in bytes
+       7) date and time of creation
+       8) file name and directory name 
+        
+
+Why do you think the prmission of a file is very important?
+we have three categories of permissions, namely 
+     the, 
+          - rwx = read write execute
+          - r-w = read write
+          - r   = read
+By default, the first file permission belongs to the owner
+i.e
+    rwx = owned by owner
+    r-w = owned by group 
+    r   = owned others
+
+File permission is a key facture when it comes to security
+so please take note about that
+
+Now we are going to deal with a very important aspect as far as files and directories are concern,
+This will be file security and permissions
+
+  FILE SECURITY AND PERMISSIONA
+  =============================
+Generally we have three categories of individuals that can access a file, they are;
+
+        - owner
+        - groupowner
+        - others
+Since we have three categories of individuals that can access a file, these files are are also access in different
+levels, the levels in which we can access a file include;
+
+          you can read a file
+          you can write or modify a file
+          you can execute a file
+i.e
+          - read
+          - write
+          - execute
+
+The write access is the superior access to a file, this is because when you have a write access to a file, you are 
+able to modify the file while others can not, 
+You come to discover that with the executable access you can use the file for automation or to run some other commands
+
+The accesses are assined some numbers by default,
+i.e          
+          r - read    = 4  
+          w - write   = 2
+          x - execute = 1
+
+Take note that we have a directory that we have created, and a file
+I that directory and files, we have;
+
+     drwxr-xr-x. 3 ec2-user ec2-user 17 Jun 19 17:33 dev
+     -rw-r--r--. 2 ec2-user ec2-user  1 Jun 19 14:33 mytes
+
+look closely at the permisions of the directory and that of the file
+you will find out that they have different permissions
+ i.e
+     d rwx r-x r-x. 
+     - rw -r-- r--
+
+From the above default values of permissions, we can now say 
+
+                  owner        groupowner       others       default permission
+directory         rwx = 7      r-x = 5         r-x = 5             755
+file               rw = 6      r-- = 4         r-- = 4             644
+
+all what we have done here is known as the default permissions of files
+Note that these default values can be changed
+
+if we want to assign full permision to a file, it means that any body in the os can read and write in the file
+i.e
+   from waht we have above, the file will have a permission
+            
+             0666
+
+And for a directory, it means any body in the os can read , write and execute
+and from the our default values above , we will have a full perssion as;
+            
+             0777
+
+Now we have seen the full permissions for directories and files and the default values,
+The difference between the full permission and the defaul permision is called the;
+
+           the UMASK value      
+i.e
+                      file     directory        
+   full permisions    0666      0777    
+   default perm.      0644      0755
+                     ------    ------ 
+    umask value       0022      0022 
+
+So from our calculation, we have all seen that the umaxk value is;
+
+                umask  =  0022
+
+Therefore, the default umask for a root user is 0022 and that of a normal user is 0002
+Take note only about this two values because all those calculations were just to show
+you how the umask value is derive
+
+IQ
+   What is the default umask value of the root user and a normal user
+
+NOTE
+    The umask value is what is used to determine the default permissions of a file or directory
+    during creation 
+
+DEMO
+    illustrate some few files and directories creation and show what happens as far as file 
+    permision is concern
+
+We have seen that in all files and directories created, they have 0644 and 0755 respectedly;
+
+Now if you are given a task to create files with permisions 0600, this means that only the oner 
+of the file can read and write in the file, the group can not read nor write and even others,
+With such a file, what do you think could be the umask value?
+
+we all know that for all files that we create, they have full permissions or custom permission,
+          
+              0666
+
+and now, we are expected to create a file with custom permissions 0600    
+This means that the umask value of this kind of file is;
+
+   default full permisions           0666
+   required permission             - 0600
+                                   -------
+   umask                             0066
+
+Set a custom umask value to ensure that all files created should carry 600 permissions
+
+NOTE
+      to check the umask value , just run the command  =   umask
+DEMO
+    set the required umask value, use the command
+
+              umask [required umask valur]
+  e.g    
+            umask 0066 
+   
+   After doing this, created a file with thw 'touch' command and illustrate the file permission,
+   if it has change or not
+
+I will like us to know that, we will not be using the umask command to change permissions of files
+as we move ahead, there is a simpler command that we will be using know as the;
+
+                chmod = this command is use to change file permissions
+i.e
+                chmod 600 filename = is same as setting the umask to 0066, before creating a file 
+So take note
+
+DEMO
+    Create some files and directroies while changing their permissions with the chmod command
+    Use created files to show how automation access is granted to group and others, illustrating
+    the importance of why file permission is very important,
+e.g
+    like a person can be sacked from the office while he/has had control over a file and another person 
+    has replace the he/she and the file now will be run by the new person, so the ownership has to be changed,
+    
+Changing owners of group are not done by normal users in the OS, so for you to change the ownership of a file,
+you must posses elivated priveleges or root access, or sudo access
+   so for you to change the ownership of a file, you need sudo access and take note that you can not change the
+   ownership of a user that doesn't exit in the system.
+
+               sudo chown
+
+To change the group owner also, you can run the command 
+
+               sudo chgrp
+
+We can change the owner and the groupowner at the same time, since our job is to automate task, we can run;
+
+               sudo ownername:grpowner
+
+DEMO
+     illustrate how ownership is being changed for owner and groupowner in a directory or file
+      demonstrate couple of examples to the understanding of foxes
+     
+
+
