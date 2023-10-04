@@ -1,0 +1,237 @@
+                                 LINUX  2
+                               =============
+REVIEW OF LAST CLASS
+
+i hope every body was able to create a server and access it?
+In our last class we saw that to create an instance/server, we need an account in aws
+and we saw that aws stands for amazon web services, we also saw that to create an account in AWS
+we need some certain credentials which include
+
+      -email address
+      -username	
+      -password
+      -credit card
+      -address(postcode)
+We saw how we can log in our AWS ACCOUNT by using
+      
+       -root user email address
+       -password
+we saw how we can log in our AWS account and create an instance/server by
+
+       -searching for AWS ec2 service console
+       -launce your linux ec2 instance/VM/server
+       -we need a server to run task for clients
+        
+Apart of this, we saw how we can connect to our created instance/server, and to do that we need,
+      
+      -a computer  e.g windows system
+      -an ssh  (secure shell) client software/protocol (mobaxterm)
+      -the servers details 
+          the servers public/private ip
+          usernanme
+          password/ssh private keypair
+      -open ssh port 22 on the servers firewall 
+
+ Those with the mac operating system
+      ssh -i keypair user@ipaddress
+  
+DEMO
+  server creation and how members can connect to it
+log into AWS account , launch an instance and connect to it
+in doing this, demonstarate all steps explaining all steps
+make known of the fact that servers don't have the same ip
+
+Now that we are connected to our server we can now run task
+
+
+ THE LINUX FILE STRUCTURE
+==========================
+
+                      WINDOWS         LINUX
+                    . fILES          .fILES         
+                    . FOLDERS        .DIRECTORIES
+                    .SUD-FOLDERS     .SUB-DIRECTORIES
+ROOTS Directory       c:\                /
+in the windows file structure, the principal directory is (c:) this implies that everything you do in windows 
+begins with (c), while in linux it is a forward slash (/)
+A directroy/folder is a container that contains files and sub-folders
+
+LINUX FILE STRUCTURE
+
+linux root directroy = /
+
+some few basic commands 
+              
+              ls  = list the content of a directory
+              pwd = present working directory
+              hostname = tell you the hostname of your server
+if i run the command 
+                  sudo hostname set-hostname demo  = it will change the host name of the server
+to view changes, we switch to a user
+                  sudo su - ec2-user 
+now you will the our hostname has been changed
+
+So now if we exrcute 'ls' which stands for list the content of the directory, 
+       
+           e.g     ls /
+   
+we will find out that the linux root directory has some content in it, lets run and see
+
+DEMO 
+    ls /   copy the content of it and explain the content of what is in the important directories
+
+ e.g  
+
+1) bin - contains binary files(commands) like ls, pwd, clear, cd, touch, mkdir etc
+   
+         Some other simple command that we will running include
+
+             cd    =  change directory
+             touch = creates a file
+             mkdir = creates a directory
+DEMO
+    cd / and list its content with ls
+
+home directory - contains users home directory details
+     run the command ls /home  = this will list the content of the home derictroy
+
+[ec2-user@demo ~]$ ls /home
+ec2-user
+
+now if we run the command - adduser = this will add a new user to our server
+here we have learn another new command, lets try and see, not everybody can add 
+a user to the server, so we need some privileges, in linux , we say you need root access
+or sudo access, 
+sudo simply means you are running the task as the root user
+now if we run 
+            sudo adduser emma
+it will create a new user in our server called emma 
+we can even add as many users as we wish, say; president, dominion, obi etc
+
+if we now run the command ls /home, we will find that all the users we added to our server are 
+stored in the /home directory
+so lets now run ls /home and see what we have there
+
+let us check at one other directory
+
+2) sbin = this directory contain system binary files/commands
+we talked about the bin directory containing binary files, similally the sbin contains binary 
+file but these files/commands can only be executed by the admin users or root users 
+e.g adduser, create passwd to users, change name of server etc
+
+
+IQ
+  what is the difference between bin and sbin directories in linux
+ANSWER
+    sbin are binary files only exwecutable by users with administrative or elevated privileges
+    or admin/root user while bin are binary files executable by any user
+
+3) etc = contains configuration files
+        /etc/shadow           = contains passwd of users
+        /etc/passwd           = contains users imformation
+        /etc/ssh/sshd_config  = ssh configuration details - determines if someone will use an ssh key or passwd
+
+4) tmp = contains temporal files
+         if you want to create some temporally files, this is where to create
+
+5) opt = where software and packages are install
+          install and download all packages/software in this directory
+
+6) lib = library files
+          put all library files here
+
+7) var = contains dynamic files
+          /var/log/messages  
+   this contains dynamic files like log, what ever is happening in your server is recorded in the log file
+e.g if you are unable to access your your server , there are some files e.g var/log/messages that you can go there to check
+
+8) proc = contains information about our server, the hardware component
+          meminfo
+          cpuinfo
+ 
+
+                          SIMPLE/BASIC LINUX COMMANDS
+                        ================================
+Run task/wprkload using commands
+if we don't want to use commands we can use GUI
+if you are using GUI , you are going to be paid something like [$30k-$60k]
+but with the CLI , you are to be automating task for your client 
+with this you will be paid like $100k upward 
+
+we know that a directory/folder is a container that contains files
+we have a new client = atango
+
+You are given anew ticket to carry out task for ur client
+
+TICKET 001
+       create work directories for atango
+they want you to create a directory called
+       1) devops
+       2) dev/maven/git/aws/nexus/java     
+
+
+     CREATING, NAVIGATING AND MANAGING DIRECTORIES
+
+The first command is
+
+       mkdir =  will creates a directory
+
+if yopu creates a wrong directory , you can delete the directory with
+     rmdir = this command will deletes an empty directory(no content)
+
+if the directory has content, we delete it with
+      rm -rf - deletes a directory with content
+
+now if i want to navigate from one directory to another, the command is
+         cd
+
+to know my present working directroy, the command is 
+          pwd
+
+listing the content of a directory, the command is 
+          ls
+
+Run a command mkdir -v directiryname
+where -v = verbose mode
+
+DEMO
+    illustrate series of directory creations and demonstrations
+
+To create a directory in this formate, dev/maven/git/was/nexus/java,  
+we need to add -p , where -p stands for creating both the parent and child directory
+i.e 
+    mkdir -p directories or mkdir -vp directories
+
+when you create a directory like this and run the command 'ls' , you only see the parent
+directory, to see all the directories, we will run a command call the 
+   tree - command
+when we do this, the system will tell us that command not found,
+here we can install the tree command using the a package manager called 'yum' , but to execute
+this command, you must have root privileges/admin by using sudo, do not forget that when you use 
+sudo, it permits you to switch or run commands as another user
+so to install the tree command, run
+
+         sudo yum install tree
+DEMO
+    how to install the tree command and use it to list the directories
+deletes some created directories and do more demonstrations
+
+LET US SEE HOW WE CAN NAVIGATE DIRECTORIES 
+We navigate directories by using the cd command
+
+DEMO
+    demonstrate how we can move from one directory to another,
+demonstrate how to navogate directories as dev/maven/git/was/nexus/java
+i.e 
+    cd ..
+    cd ../..
+    cd ../../..
+    cd ../../../..        
+    cd ../../../../..
+
+you may have to switch from one directory to another so please take note
+
+if i do ls pwd = it will list the content of my present working directory
+le dev = list the content in the dev directory
+ls /home = list the content of the /home directory
+le /dev = list the content of the /dev home director
