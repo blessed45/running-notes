@@ -1,0 +1,239 @@
+                   LINUX 8 NOTES
+
+ So far we have been looking at commands on how to make you exel
+as far as your being an engineer is concern, you have to have a 
+good mastery of these commands, And don't bother before you know it, 
+you will be singing the song of what prompted you to study this course 
+
+From all that we have seen so far, today we will be rounding up with 
+linux commands which is the base and a very good foundation to DevOps
+
+As a DevOps engineer i work with my team to;
+
+     delop
+     test
+     build
+     review/qualify
+     secure
+     deploy
+     maintain and monitor
+software and applications using computerised automated technologies
+ 
+   TEAM
+  2-DevOps
+  5-Developers
+  1-QA
+  1-DevsecOps
+  1-srum master     
+
+DEMO
+     detail explaination of what is the job of a DevOps engineer
+
+To accomplish all these, we discused that we use computarise solutions 
+which implies the use odf computers and we saw that a computer consist 
+of;
+     the hardware (cpu, keyboard, mouse, etc) 
+     the software (operating system OS)
+
+We run different tasks on our servers to manage applications
+workload executed in application managenment
+===========================================================
+
+   1) usermgt
+   2) files/codes = filemgt
+   3) securitymgt
+   4) processmgt
+   5) systemmgt
+   6) packagemgt      
+DEMO
+
+HOW TO EXECUTE WORKLOAD
+========================    
+    
+    1) GUI = graphical user interface = less than $90k
+    2) CLI = command line interface   = more than $150k 
+    3) SCRIPTS ( a sctipt is a reusable code/file) = $200k 
+
+So far we ahve executed commands and commands are going to help you achieve 
+your tasks with relative ease
+
+Now lets look on some other commands
+
+OTHER COMMANDS
+===============
+
+DEMO
+    connect to a server and demo a couple of users connected to 
+    the server from their systems and outline what they need to 
+    connect to the server, 
+
+For users to connect to a server, there is a process called sshd  
+service must be running before you can connect to the server
+
+e.g
+    somebody tells you that he/she is unable to log into the server 
+    with all credentials correct, expalin what could be the problem
+
+           1) check if the user is running the ssh command correectly
+                     
+                      ssh username@ipadderss
+
+           2) check if ssh port 22 is open on the firewall/security group
+
+           3) check if the server is up and running  
+                  
+                 ping the server
+
+           4) check if the sshd service is running, if not start the service 
+
+              sudo systemctl status sshd = to check the service
+                
+              sudo systemctl start sshd = to start the service 
+
+Lets now look at some other commands
+1) clear = this command will clear the terminal screen
+
+2)   cal  = this command is use to check/set the calender on the server
+
+e.g       
+        cal june 2023 = will give you the calenda of june 2023
+        cal july 1982 = will give you the calenda of that year
+
+if you want to know the day that you were born in the week; run the cal command
+
+3) wget  = this is a none interactive network downloader user to download files
+           from the internet
+
+   e.g  
+       there is a time that you want to download a package, the system interacts with you;
+  i.e
+      ask you if what you want to do is ok by you,
+That process of the system asking if you are ok or not is known as interaction,
+here we say the system is interacting with you
+
+We can still as well ignore the interaction by using the -y flag
+
+WE HAVE LEARN THAT IF WE WANT TO DOWNLOAD ANYTHING, WE SHOULD DO IT IN THE [opt] DIRECTORY
+i.e = cd into the 'opt' directory and download what u want to download from the internet there 
+
+
+4) echo = this command prints what ever you type
+
+5) tee  = this command is use to store and view the output of any command at the time   
+
+    e.g
+        run on the terminal,
+                            echo "at 360k a year i am rich"
+                            echo "with DevOps i'm a millionaire"        
+        demo the echo message and re-direct to a file call rich
+        cat the file rich, pipe and tee newfilename
+
+6) hostory = this command displays the ecently executed commands
+           = all the commands that we have been ruuning are stored here
+
+7) watch = this command is use periodically 
+          - with this command you watch what is happening to youe file system
+            or your memory
+       
+               watch df -h  = checks file system
+               watch free -m  = to check your memory  
+     
+Take note; this command is very good for file monitoring
+
+8) ping = this command sents ICMP ECHO_REQUEST to network host,
+          - checks for network connectivity
+         e.g
+             i have a database server i want to check, are you alive? 
+
+9) telnet    = a server uses ports and protocols,
+               the number of ports in a server/system/computer are 0-65536 ports[addresses] by default
+               So any server that you create has these number of ports/addresses 
+           e.g
+               if somebody tell you he/she can't access his/her server, you can check if the required port
+               that the server is running is open
+
+                               telnet server-ipaddress portnumber 
+
+
+
+10) reboot =   this command will reboot the server and it also need sudo access
+
+11) restart =  this command is use to restart the server and it requires sudo access,
+                take note that when you reboot/restart a server, the ipaddress of the
+                server can change 
+
+12) shutdown = this command is executed with sudo access
+             - use to shutdown the system
+             - you will find a warning while try to run the command
+
+13) uname   = this command will describ your system
+           
+             uname -a = tell you all information about your server
+
+             cat /etc/*release  = tell you detailed information about your server
+
+             cat /etc/*os*   = tell you detailed information about your server
+
+
+14) netstat   = remember the number of ports in a server/system/computer are 0-65536 ports[addresses] by default
+                       So any server that you create has these number of ports/addresse
+                     - with the help of this command i can know how many ports that are in use
+                     - let assum that we want to install ngnix, and nginx is using port 80/443,
+                       so for you to know the ports that are in use before installing an application 
+                       that runs on a particular port number, we use netstat command to check if the
+                       port is in use or not, this is because if that port is already in use, that package
+                       will not be able to run
+   NOTE 
+       if you run netstat and the system tell you command not found, you can install the command by running
+                            
+                  sudo yum install net-tools -y = will install netstat command
+  
+Now we can check the ports by running,
+
+                    netstat -tulpn  = will list all the ports in use
+
+                    t = tcp
+                    u = udp
+                    l = listening 
+                    p = port
+                    n = number
+
+     protocols        ports/address
+       ssh                 22
+       http                80
+       https               443
+       nfs                 2089
+       rdp                 3089 
+       smtp                25/465/587
+       tomcat              8080
+       jenkins             8080
+   
+ 15) man = diplays the on-line manual type
+          - tells you everthing about what a command does
+      e.g
+          run,  
+              man ls
+
+16) help  =  helps you on how to use a command
+
+17) info = helps you with information about a command
+          - make sure you install the info command before executing
+
+18) whatis  = diplaces the manual page of a command
+
+19) service = it will give the status of service
+
+             service sshd start
+             systemctl start sshd
+
+20) systemctl list-unit-files   =  it will list all services
+
+21) uptime  = tells how long a server has been up and running 
+
+When it comes to linux commands , i think we have come to the end of all
+that is required you know as far as this course is concern
+
+We have come to the end of the first MODULE
+Our next MODULE will be SCRIPTING
+In the MODULE, we will be learning how tasks are being automated to 
+a higher level 
