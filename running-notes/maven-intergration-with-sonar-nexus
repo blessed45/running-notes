@@ -13,7 +13,7 @@ tag and enter the sonarqube server's ipaddress, to do that;
                           directory
 
 
-when you run the command vi/vim pom.xml, you will find a tag
+when you run the command vi /vim pom.xml, you will find a tag
 like this below, change the sonar.host.url ipadress(e.g 18.209.180.44)
 to that of your sonarqube server 
 
