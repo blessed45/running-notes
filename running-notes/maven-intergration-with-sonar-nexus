@@ -58,7 +58,7 @@ blob stores   cleanup policies  Repositories  Content Selectors
 - Click on Repositories
 - Take create repository
 - Select, maven2 (host)
-- Enter the reponame where you see name e.g toyotarelease
+- Enter the repo-name where you see name e.g toyotarelease
 - Click on version policy and select, release
 - Allow layout policy to be strict
 - click on deployment policy and select, allow redeploy
@@ -72,7 +72,7 @@ Go to your maven server,
 stwich to your project directory
 vi into the pom.xml file
   
-   vi/vim pom.xml
+   vi /vim pom.xml
 
 make sure you are in you project directory
 search for the distributionmanagement tag,
@@ -100,12 +100,12 @@ http://18.204.7.129:8081/repository/releases/
 
 Do same for that of the snapshot
 
-After doing replacing the two urls, save and quit; :wq!
+After replacing the two urls, save and quit; :wq!
 
 Now set the nexus login credentials in the maven server
 To do this, you vi into the below file by running;
 
-      sudo vi/vim /opt/maven/conf/settings.xml
+      sudo vi /vim /opt/maven/conf/settings.xml
 
 In this file, check for the server's tag
 You will see a tag as below
