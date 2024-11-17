@@ -151,15 +151,16 @@ Shell-scripts has '.sc' or '.sh' extensions
 script1.sh
 ---------
 
-#!/bin/bash
-echo "Good morning Millionaire,"
-whoami
-echo Welcome to solavisetech 
-echo Today is,
-date
-
+       #!/bin/bash
+       echo "Good morning Millionaire,"
+       whoami
+       echo Welcome to solavisetech 
+       echo Today is,
+       date
 
 Scripting/automation langauges:
+-
+
   1. Bash shell
   2. Python 
   3. Groovy  (Jenkins)
@@ -193,44 +194,45 @@ How to make your codes/scripts:
 comment.sh
 ----------
 
-  #!/bin/bash
-  echo 'single line comment starts'
-  # This script welcome Engineers to solavisetech.
-  # comented lines starts with #
-  # Only run this script on Linux systems
-  # Author:ATANGA
-  # Copyright C solavisetech
-  # whoami
-  date
-  echo welcome to solavisetech
-  echo 'single line comment ends'
+         #!/bin/bash
+         echo 'single line comment starts'
+         # This script welcome Engineers to solavisetech.
+         # comented lines starts with #
+         # Only run this script on Linux systems
+         # Author:ATANGA
+         # Copyright C solavisetech
+         # whoami
+         date
+         echo welcome to solavisetech
+         echo 'single line comment ends'
 
 mlc.sh
 ------
-  #!/bin/bash
-  echo "Multi-line comment starts"
-  <<boy
-  This script welcome Engineers to solavisetech.
-  Only run this script on Linux systems
-  Author: Prof. Atanga
-  Copyright C Solavisetech
-  pwd
-  boy
-  echo "Multi-line comment ends"
-  date
-  whoami
+         #!/bin/bash
+         echo "Multi-line comment starts"
+         <<boy
+         This script welcome Engineers to solavisetech.
+         Only run this script on Linux systems
+         Author: Prof. Atanga
+         Copyright C Solavisetech
+         pwd
+         boy
+         echo "Multi-line comment ends"
+         date
+         whoami
 
 ANOTHER
 -
-  <<rich
-  This script welcome Engineers to solavisetech.
-  Only run this script on Linux systems
-  Author: Prof. Atanga
-  Copyright C Solavisetech
-  pwd
-  rich
+      <<rich
+      This script welcome Engineers to solavisetech.
+      Only run this script on Linux systems
+      Author: Prof. Atanga
+      Copyright C Solavisetech
+      pwd
+      rich
 
 Who are the comments meant for?
+-
 
 1. It make your script/code to be understood by you and others over time. 
 2. It make your script/code easily reusable in the future
