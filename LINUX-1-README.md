@@ -116,8 +116,9 @@ The person that uses gui take like about 20munites to create 20files while that 
 can take 3munits, so cli is more paid than gui users
 
 
-         LINUX OS AND LINUX COMMANDS
-        ==============================
+LINUX OS AND LINUX COMMANDS
+==============================
+
 Linux is an open source operating system
 Linux started in 1991 by LINUS TORLVADS
 
@@ -143,10 +144,12 @@ A solfware can be free / open source/ licence
            Paid for the OS
 
 IQ
+--
    Explain your experience with open source technology; linux
 ANSWER
       With open source technology , the solfware is free including the source code (recipe/secret of the software)
 DEMO
+---
   You are invited by a friend for dina, you arrive and you served food and how the food was prepared, we can say here 
 that you were served an open source food
 another friend invits you for dina, serve you foor without telling you hiw the food was orepared, we say here that you 
@@ -168,8 +171,8 @@ some of these include;
  9. Amazon Linux 2AMI
 10. Debian
 
-               TEH LINUX FILE SRUCTURE
-               =======================
+TEH LINUX FILE SRUCTURE
+=======================
 
 Before we enter into the linux file structure, let us start by seeing how we can 
 create and connect to a linux Os
@@ -198,8 +201,8 @@ which of these will you prefer?
 
 For us to create a linux OS we need an account in AWS cloud
 
-                     CREATING AN ACCOUNT IN AWS CLOUD
-                     ================================
+CREATING AN ACCOUNT IN AWS CLOUD
+================================
 
 Requirements;
            website  =   aws.amazon.com
@@ -215,8 +218,8 @@ e.g
     ,,/ ../ ?/ #/ @ something like this for special characters
 
 
-                 CREATING/LAUNCHING A SERVER/INSTANCE
-                 ====================================
+CREATING/LAUNCHING A SERVER/INSTANCE
+====================================
 
 After creating your aws account, you can nowlaunce a server, in linux we it an instance,
 log into your aws console and search for EC2 , click on it and you will see an instruction
@@ -229,16 +232,16 @@ seconds and you will see see a green running state coloration. that shows your s
 the key pair that you created will be downloaded into your computer, if you go to your download, you'll find
 it there, and this is the key pair you will be using with the server ip to access your server
               
-              HOW TO CONNECT TO THE SERVER
-              ===========================
+HOW TO CONNECT TO THE SERVER
+===========================
 
 To access the server you created, you need ;
             ipaddress of server
             username
             password/key pair 
 
-            CONNECT TO YOUR LINUX SERVER IN AWS USING SSH CLIENT/PROTOCOL
-            -------------------------------------------------------------
+CONNECT TO YOUR LINUX SERVER IN AWS USING SSH CLIENT/PROTOCOL
+-------------------------------------------------------------
 
 After creating an instance and obtaining the above requirements, for us to them to 
 connect to our server that we created in aws, we need an ssh client solfware, 
@@ -388,8 +391,8 @@ e.g if you are unable to access your your server , there are some files e.g var/
           cpuinfo
  
 
-                          SIMPLE/BASIC LINUX COMMANDS
-                          ===========================
+SIMPLE/BASIC LINUX COMMANDS
+===========================
 
 Run task/wprkload using commands
 if we don't want to use commands we can use GUI
@@ -403,14 +406,15 @@ we have a new client = atango
 You are given anew ticket to carry out task for ur client
 
 TICKET 001
+----------
        create work directories for atango
 they want you to create a directory called
        1) devops
        2) dev/maven/git/aws/nexus/java     
 
 
-     CREATING, NAVIGATING AND MANAGING DIRECTORIES
-     =============================================
+CREATING, NAVIGATING AND MANAGING DIRECTORIES
+=============================================
 
 The first command is
 
@@ -435,6 +439,7 @@ Run a command mkdir -v directiryname
 where -v = verbose mode
 
 DEMO
+---
     illustrate series of directory creations and demonstrations
 
 To create a directory in this formate, dev/maven/git/was/nexus/java,  
@@ -453,6 +458,7 @@ so to install the tree command, run
 
          sudo yum install tree
 DEMO
+----
     how to install the tree command and use it to list the directories
 deletes some created directories and do more demonstrations
 
@@ -461,9 +467,11 @@ LET US SEE HOW WE CAN NAVIGATE DIRECTORIES
 We navigate directories by using the cd command
 
 DEMO
+----
     demonstrate how we can move from one directory to another,
 demonstrate how to navogate directories as dev/maven/git/was/nexus/java
-i.e 
+i.e
+---
     cd ..
     cd ../..
     cd ../../..
