@@ -24,7 +24,7 @@ personal class computers = these are computers used for personal use
 -
 these types of computers include; lenovo/ destop/ laptop/ phones/ notepads/ tablets/ watches/ ipads/  etc
 
-enterprice computers;
+enterprise computers;
 -
 they include; workstations/ servers (super computers)
 
