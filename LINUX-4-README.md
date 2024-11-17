@@ -16,6 +16,7 @@ To know who is connected to ur server and at what time the user got connected an
                atango   pts/3        2023-06-24  12:21     (129.0.226.22)
 
 DEMO
+-
     - Diagramatical illustration of users connected to a server and performing task
     - assign password to a user in your system and ask users to connect to it and
     - run the 'who' command and expain for more clearity
@@ -37,6 +38,7 @@ To see/know the list of all users connected to the server, run the command;
 This will list out a compact list of all users connected to the server           
 
 DEMO
+-
      Run all the commands bellow
 
              whereis = gives you where a command is found in your server 
@@ -64,9 +66,11 @@ DEMO
 
 
 QUESTION
+-
          Explain you experience with linux systems
 
 ANSWER
+-
        My experience with linux systems/servers include;
 
        - running workload using the 
@@ -197,6 +201,7 @@ To download packages from the internet, we use the ;
           wget = non interactive network downloader
 
 DEMO
+-
      - install packages
      - install wget and downoad a package e.g apache maven
 
@@ -209,13 +214,15 @@ We are explaining the fack that when it comes to linux, you experince is managin
 and we can also manage process as well
 
 DEMO
+-
     - diagramatical illustrating of users connected to a server ding different tasks , like
       five of them, managingfiles, managingpackages, managingsystem, managingservice, 
       managingprocess, backingup data etc
 
 Anything that we do in the server is a process in linux thus the need for process management
 
-                PROCESS MANAGEMENT
+PROCESS MANAGEMENT
+-
 
              FileMGT
              UserMGT
@@ -233,10 +240,12 @@ we have commands here like;
        top command
 
 DEMO
+-
      run the top command and explain while laying emphasis on load average
      be remimded of the fact that load average is on 1
 
 IQ
+-
    what is load average in linux
 ANSWER
       the load average tells you how much load a system is carrying
@@ -291,6 +300,7 @@ Istall apache httpd and check if the servive is running
          ps -ef | grep httpd
          
 DEMO
+-
     - do illustrate more examples
     
                  
@@ -303,7 +313,8 @@ SERVICE MANAGEMENT
       systemctl arguements servicename
       systemctl start/stop/status/enable/disable/restart servicename
 
-DEMO 
+DEMO
+-
      start some services, check their status
 
 Q
@@ -358,6 +369,7 @@ i.e
        tar   = use to archive a directory/file
 
 DEMO
+-
      - vim into a file with much content and zip the file
      - install the zip package
      - zip file to a file called filename.zip
@@ -375,6 +387,7 @@ to tar a file, we run;
       tar -xvf filename.tar.gz              =  extract compressed *.tar.gz file 
 
 DEMO
+-
      ceate a tar file and extract the file
 
 
@@ -395,7 +408,6 @@ workload executed in application managenment
    4) processmgt
    5) systemmgt
    6) packagemgt      
-DEMO
 
 HOW TO EXECUTE WORKLOAD
 ========================    
@@ -413,6 +425,7 @@ OTHER COMMANDS
 ===============
 
 DEMO
+-
     connect to a server and demo a couple of users connected to 
     the server from their systems and outline what they need to 
     connect to the server, 
@@ -464,6 +477,7 @@ here we say the system is interacting with you
 We can still as well ignore the interaction by using the -y flag
 
 WE HAVE LEARN THAT IF WE WANT TO DOWNLOAD ANYTHING, WE SHOULD DO IT IN THE [opt] DIRECTORY
+-
 i.e = cd into the 'opt' directory and download what u want to download from the internet there 
 
 
