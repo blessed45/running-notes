@@ -258,7 +258,7 @@ NOTE;
      - team URL
      - organization project-repo URL
 
-So as DevOps engineer, you van be task to create:
+So as DevOps engineer, you can be task to create:
 
    - a github account for your organization
    - create team and add members
