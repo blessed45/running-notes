@@ -88,7 +88,7 @@ Here, we have a distributed version control system
 
 Github is a source code manager (SCM)
 
-Githube => SCM
+Github => SCM
 
 With Git;
      - nearly every operation is local
