@@ -7,6 +7,7 @@ Develops, Tests, Builds, deploys & monitors applications
 Applications are the output from Software
 
 Releases:
+-
    Releasing an application is taking/deploying it to the client
    In realtime we have multiple Releases.
 
