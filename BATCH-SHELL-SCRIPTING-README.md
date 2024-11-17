@@ -62,12 +62,12 @@ write a simple script that welcomes Engineers to work?
 welcome.sh
 ==========
 
-  #!/bin/bash 
-  echo "Good morning"
-  whoami
-  echo "Welcome to solavisetech" 
-  echo "Today is"
-  date 
+         #!/bin/bash 
+         echo "Good morning"
+         whoami
+         echo "Welcome to solavisetech" 
+         echo "Today is"
+         date 
 
 
 
