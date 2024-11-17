@@ -35,9 +35,9 @@ Version control systems = VCS:
 
   Local = version1,
   
-          version2,[5000LINES ] 
+  version2,[5000LINES ] 
           
-          version3 [2000LINES ] 
+  version3 [2000LINES ] 
 
 
    cons: 1. Single point of failure
