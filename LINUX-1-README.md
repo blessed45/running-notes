@@ -1,5 +1,5 @@
-                           LINUX 1 
-                           =======
+LINUX 1 
+=======
 
 WHAT IS A CUMPUTER
 ------------------
