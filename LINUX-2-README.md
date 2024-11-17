@@ -1,5 +1,6 @@
-                             Linux 2
-                             -------
+LINUX 2
+=======
+                            
                 
 In our last class we started seeing what is linux and how our job looks like as a devOps engineer
 so today we will be entrying to our fisrt module which is a very important module, so take note
