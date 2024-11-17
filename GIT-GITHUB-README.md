@@ -8,7 +8,8 @@ Applications are the output from Software
 
 Releases:
 -
-Releasing an application is taking/deploying it to the client
+Releasing an application is taking/deploying it to the client.
+
 In realtime we have multiple Releases.
 
 release1 = version1   = 1000lines of code  
