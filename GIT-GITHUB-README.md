@@ -78,7 +78,8 @@ at that and stores a reference of that snapshot
 And we can make a reference of that snapshot.
 
 With Git;
-     Developers can collaborate
+Developers can collaborate
+
 Here, we have a distributed version control system
 
      For each developer, we have to make sure that Git is install
@@ -91,10 +92,11 @@ Github is a source code manager (SCM)
 Github => SCM
 
 With Git;
-     - nearly every operation is local
-     - Git has data integrity
-     - Git generally only add data
-     - we can rollout and rollback with Git
+
+- nearly every operation is local
+- Git has data integrity
+- Git generally only add data
+- we can rollout and rollback with Git
 
 * data integrity => when developers commit codes in Git/Github,
   we can know who actually committed the code and if there are any 
