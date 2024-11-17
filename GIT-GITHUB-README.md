@@ -39,11 +39,12 @@ Version control systems = VCS:
           
   version3 [2000LINES ] 
 
-
-   cons: 1. Single point of failure
-         2. lacks collaboration
-         3. in-efficient use of resources including time  
-         4. can't RollBack  
+cons:
+-
+1. Single point of failure
+2. lacks collaboration
+3. in-efficient use of resources including time  
+4. can't RollBack  
   
 
 Apart of the local system, we also have what is known 
