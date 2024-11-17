@@ -21,13 +21,16 @@ CLASSES OF COMPUTER
 Computers are classified under;
 
 personal class computers = these are computers used for personal use
+-
 these types of computers include; lenovo/ destop/ laptop/ phones/ notepads/ tablets/ watches/ ipads/  etc
 
 enterprice computers;
+-
 they include; workstations/ servers (super computers)
 
 
 what qualifies a computer is the OS
+-
 the operating system running in a computer defines the type;
 examples of os include
 linux/ 
@@ -45,25 +48,26 @@ is it possible for a computer to have more than onme opereting system?  the answ
 and you can also change the operating system form one to another and vice versa
 
 WHAT DETERMINE THE CHOICE OF OS
+------------------------------
 
 1. SECURITY
        85% OF SERVERS ARE LINUX BASED
        linux systems are not vulnerable to virus attacks
        windows systems are vulnerable to varis attacks
-2. COST
+3. COST
       linux is a free and open source OS
       windows is a licenced/paid OS
-3. SUPPORT
+4. SUPPORT
          linux has a very large effective and free community support
          windows support is avalaible but paid only from mmicrosoft
          (vendor) 
-4. USAGE
+5. USAGE
         LINUX OS IS MOSTLY UTILISED FOR ENTERPRISE TASKS
         WINDOWS IS UTILISED AS WORKSTATIONS 
-5. PERFORMERS
-6. REVIEWS
-7. SPEED
-8. SCALABILITY AND ELASTICITY
+6. PERFORMERS
+7. REVIEWS
+8. SPEED
+9. SCALABILITY AND ELASTICITY
 
 
 NOW WE WANT TO TALK ABOUT LINUX OPERATING SYSTEMS AND ITS IMPORTANCE
