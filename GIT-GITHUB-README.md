@@ -32,8 +32,11 @@ What can be done??? We RollBack
 Versioning in Software Development:
 ===================================
 Version control systems = VCS:
-  Local = version1, 
+
+  Local = version1,
+  
           version2,[5000LINES ] 
+          
           version3 [2000LINES ] 
 
 
