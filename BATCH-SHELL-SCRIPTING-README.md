@@ -65,7 +65,7 @@ welcome.sh
          #!/bin/bash 
          echo "Good morning"
          whoami
-         echo "Welcome to solavisetech" 
+         echo "Welcome to Atango Infotech" 
          echo "Today is"
          date 
 
@@ -154,7 +154,7 @@ script1.sh
        #!/bin/bash
        echo "Good morning Millionaire,"
        whoami
-       echo Welcome to solavisetech 
+       echo Welcome to Atango Infotech 
        echo Today is,
        date
 
@@ -249,40 +249,43 @@ Making your script portable.
 
 using variables in scripting:
 ============================
+
 name=Atanga
 cpy=solavisetech
 how to call variables in bash shell scripting:
-  $variableName 
-  ${variableName} 
+$variableName 
+${variableName} 
 
 var1.sh  
 -------
 
-  #!/bin/bash
-  name=Atanga
-  cpy=solavisetech
-  echo "Good morning ${name}"
-  echo "Good morning ${name}"
-  echo Welcome to $cpy
-  echo Good morning ${name}, welcome to $cpy
+      #!/bin/bash
+      name=Atanga
+      cpy=solavisetech
+      echo "Good morning ${name}"
+      echo "Good morning ${name}"
+      echo Welcome to $cpy
+      echo Good morning ${name}, welcome to $cpy
 
-variables:
+Variables:
+-
 variables are defined by the either the user or the system 
 we can refer/call a variable with $variable 
 
 User defined variables   = UDV  : 
+-
 
  Are defined/created by some admins  
 
 udv.sh
 ------ 
 
-  #!/bin/bash
-  name=Atanga
-  cpy=solavisetech  
-  city=Alexandria
-  country=USA 
-  echo $name works for $cpy located in $city, $country    
+      #!/bin/bash
+      name=Atanga
+      cpy=Atango Infotech  
+      city=Alexandria
+      country=Cameroon 
+      echo $name works for $cpy located in $city, $country    
 
 system defined variables   = SDV  : 
 SDV Are variables that comes with the OS  
@@ -294,17 +297,22 @@ env = List all system defined variables
 
 sdv.sh
 - 
-city=Alexandria
-APP=TeslaApplication
-user=Atanga
-echo $USER works for solavisetech, $city
-echo $PWD
-echo $SHELL
-echo "This $APP is the best version in the market"
+      city=Alexandria
+      APP=TeslaApplication
+      user=Atanga
+      echo $USER works for solavisetech, $city
+      echo $PWD
+      echo $SHELL
+      echo "This $APP is the best version in the market"
+      
 # udv are or should be written in lowercase. Highly recomended
 # sdv  are written in upper case
 
-If you run the command = env;
+If you run the command
+-
+           env
+
+It list out some system define variables
 
 SHELL=/bin/bash
 HISTCONTROL=ignoredups
@@ -318,21 +326,29 @@ HOME=/home/oke
 start writing your script with shebang [#!] /bin/sh]
 
 system defined variables:
-echo sdv starts  
-echo $HISTSIZE  
-echo $USER 
-echo $HOME  
-echo $PATH  
-echo $LOGNAME
-echo $SHELL 
-echo sdv ends   
+-
+      #!/bin/bash
+      echo sdv starts  
+      echo $HISTSIZE  
+      echo $USER 
+      echo $HOME  
+      echo $PATH  
+      echo $LOGNAME
+      echo $SHELL 
+      echo sdv ends   
 
-echo $HISTSIZE
+To check the HISTSIZE, run the command
+-
+             echo $HISTSIZE
 1000
-export HISTSIZE=2000
+
+To set HISTSIZE, RUN
+-
+               export HISTSIZE=2000
 
 
-dynamic script  :
+Dynamic script  :
+-
   1. echo "$name Welcome to $cpy"  
 
 static script:
@@ -350,36 +366,38 @@ write a script to authenticate bank users:
 bank.sh
 -------
 
-  #!/bin/bash
-  echo 'Please enter your name'
-  read name
-  echo "$name, welcome to TD Bank"
-  echo 'please enter your card'
-  echo 'please enter your pin'
-  read pin
-  echo "$pin is the correct pin, $name, how may we help you today?"
+       #!/bin/bash
+       echo 'Please enter your name'
+       read name
+       echo "$name, welcome to TD Bank"
+       echo 'please enter your card'
+       echo 'please enter your pin'
+       read pin
+       echo "$pin is the correct pin, $name, how may we help you today?"
 
-======================================
-TICKET: Write a scipt to dynamically create users. 
+
+TICKET:
+-
+Write a scipt to dynamically create users. 
    userMGT commands: adduser / usermod / userdel /  groupadd / groupdel 
       sudo adduser/userdel/usermod/ groupadd / groupdel 
 
 userCreate.sh  
 -------------
 
-  #!/bin/bash
-  # This script requires root/sudo access
-  # This is a Dynamic script to create and assign passwd for users
-  echo "Please enter the name of the user"
-  read user
-  echo "System ready to create account for $user"
-  sudo adduser  $user
-  echo "$user account is created successfully"
-  sudo passwd $user
-  sudo grep $user /etc/passwd # to verify
-  sudo cat /etc/shadow | grep $user
-  sudo groupadd devops
-  sudo usermod -aG devops $user
+        #!/bin/bash
+        # This script requires root/sudo access
+        # This is a Dynamic script to create and assign passwd for users
+        echo "Please enter the name of the user"
+        read user
+        echo "System ready to create account for $user"
+        sudo adduser  $user
+        echo "$user account is created successfully"
+        sudo passwd $user
+        sudo grep $user /etc/passwd # to verify
+        sudo cat /etc/shadow | grep $user
+        sudo groupadd devops
+        sudo usermod -aG devops $user
 
 
 IQ:
@@ -391,25 +409,25 @@ Explain your experience in shell scripting  ?
 userMGT.sh
 ----------
 
-  #!/bin/bash   
-  echo "creating a newuser account" 
-  echo "enter the new username's name"
-  read name  
-  sudo adduser $name
-  sudo groupadd manager 
-  sudo usermod -aG manager $name   
-  id $name 
+         #!/bin/bash   
+         echo "creating a newuser account" 
+         echo "enter the new username's name"
+         read name  
+         sudo adduser $name
+         sudo groupadd manager 
+         sudo usermod -aG manager $name   
+         id $name 
 
 bank.sh   
 -------
 
-  #!/bin/bash
-  echo "Please enter your name"
-  read name
-  echo "$name, welcome to TB Bank"
-  echo "Please enter your pin"
-  read -s pin  # -s pass a secret variable
-  echo "$name you entered an invalid pin"
+         #!/bin/bash
+         echo "Please enter your name"
+         read name
+         echo "$name, welcome to TB Bank"
+         echo "Please enter your pin"
+         read -s pin  # -s pass a secret variable
+         echo "$name you entered an invalid pin"
 
 
 ======================================================================================================================================================================
@@ -448,32 +466,32 @@ fi
 if1.sh  
 ------
 
-#!/bin/bash
-echo "welcome to solavisetech" 
-echo "How much are you willing to pay"
-read price
-if [ $price -ge 4000 ]
-then 
-echo "your are admitted"  
-else  
-echo "sorry you can't be admitted today "
-fi  
+        #!/bin/bash
+        echo "welcome to solavisetech" 
+        echo "How much are you willing to pay"
+        read price
+        if [ $price -ge 4000 ]
+        then 
+        echo "your are admitted"  
+        else  
+        echo "sorry you can't be admitted today "
+        fi  
 
 if2.sh
 ------
 
-#!/bin/bash
-echo "Please enter for pin"
-read -s pin  
-if (( $pin == 4100 ))
-then 
-echo "You have entered the correct pin"
-echo "Thank you for banking with TD Bank"
-else  
-echo "sorry you entered the wrong pin"
-echo "your account is blocked for your protection"
-echo "Please visit a branch for further assistance"
-fi  
+        #!/bin/bash
+        echo "Please enter for pin"
+        read -s pin  
+        if (( $pin == 4100 ))
+        then 
+        echo "You have entered the correct pin"
+        echo "Thank you for banking with TD Bank"
+        else  
+        echo "sorry you entered the wrong pin"
+        echo "your account is blocked for your protection"
+        echo "Please visit a branch for further assistance"
+        fi  
 
 
 IQ:
