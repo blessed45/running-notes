@@ -1,5 +1,5 @@
-                 GIT AND GITHUB 1
-                 ----------------
+GIT AND GITHUB 1
+================
                  
 Software Development lifecycle (SDLC)
 -------------------------------------
@@ -61,12 +61,11 @@ control system.
 GIT => distributed version control system (DVCs)
 
 Git manages data as snapshot
+----------------------------
 
 It takes a picture of what all your file looks like
 at that and stores a reference of that snapshot 
-
-And we can make a reference of that snapshot
-
+And we can make a reference of that snapshot.
 
 With Git;
      Developers can collaborate
@@ -93,6 +92,7 @@ With Git;
 
 
 Other version control systems includes;
+--------------------------------------
 
       - SVN => Subversion
       - CVS => Concurrent version system
@@ -126,10 +126,12 @@ We have different source code managers platforms and thses include;
    - Awscode commit
 
 IQ
+--
    As a devOps engineer, what are your roles and responsibilities in
    versioning with Git?
 
 ANSWER
+------
     
     1) 
       - We ensure that developers environments are configured and secured
@@ -148,7 +150,7 @@ ANSWER
       - Create Github account for your organisation
 
 Git Download
-
+------------
 For you to connect to Git, the website is;
 
       website = httpw://github.com/
@@ -163,7 +165,8 @@ using;
         - username
         - password
 
-How To Create An organisation 
+How To Create An organisation
+----------------------------
 
    - Go to the top right while in your Github account
    - Click on the + sign
@@ -172,6 +175,7 @@ How To Create An organisation
    - Copy the organisation URL
 
 How To Create A Team
+--------------------
 
     - Go to the organisation that you created and click on it
     - On thje top bar, click on teams and select new team below 
@@ -184,6 +188,7 @@ How To Create A Team
     - Copy the team URL
 
 How To Add Members To A Team
+----------------------------
 
 For members to be added to a team, either one of the following is needed
 
@@ -199,6 +204,7 @@ After doing that, ask the member to accept the invitation
 once that is done, the member will automatically be added to the team
 
 How To Create Repositories For A Team
+-------------------------------------
 
      - Go to the team dashboard, on the top bar, click/select repositories
      - Click on [add repository] in green coloration
@@ -219,6 +225,7 @@ enter the required information
 select if you want the repo to be public or private
 
 NOTE;
+-----
 
       public repo can be viewed by anybody in the world
       private repo can only be viewed by you or members of your team
@@ -253,8 +260,8 @@ So as DevOps engineer, you van be task to create:
    - ensure that git and relevant IDEs (integrated development environments)
      are installed by developers
 
-
-     Git Installation     
+Git Installation
+================
 
 Git installation differ depending on your operating system
 
@@ -427,11 +434,8 @@ paypal will now represent the whole of that url
 
 
 
-
-==========================================================================================================
-
-                 GIT AND GITHUB 2
-                 ----------------
+GIT AND GITHUB 2
+================
 
 All these while, we have been discussing that our task as a DevOps engineer
 include;
@@ -606,9 +610,10 @@ i.e.
 Once you are authenticated, you can now push your changes to the remote repo
 with relative ease.
 
-                    ASSIGNMENT
+ASSIGNMENT
+---------
 Project,
-
+--------
 1) Create your GitHub account and onboard a new project for a fintech client
 
 2) Create a team in your created organization for PayPal and add members 
@@ -733,6 +738,7 @@ Take note that we have master because we want to push to the master branch
 as specified by the example
 
 TAKE NOTE;
+---------
 
      working area        --> untrack files
                          --> in red
@@ -789,10 +795,8 @@ To check a branch in git, we run the command;
         git branch
 
 
-==========================================================================================================
-
-               GIT AND GITHUB 3
-               ================
+GIT AND GITHUB 3
+================
 
 As DeVos engineers, our task is to;
 
@@ -887,7 +891,8 @@ Some Git commands that we have looked at so far include;
 
 These are very important commands to take note of.
 
-               GIT BRANCH
+GIT BRANCH
+==========
 
 In  Git, a branch is a line of development
 
@@ -915,9 +920,11 @@ Normally in development, it is good to have multiple development
 lines so that if there is problem, with one line, we can go to the
 other line(branch) to resolve the problem
 
-   CREATING A NEW BRANCH
+CREATING A NEW BRANCH
+=====================
 
 Ticket 001 
+----------
 
 - Create a Dev branch from the master branch
 - Switch to the Dev branch and create an app.java file
@@ -925,6 +932,7 @@ Ticket 001
 - Review the changes in the Dev branch and merge with the master branch 
 
 ANSWER
+------
 
 - To create a branch in Git, we run the command
 
@@ -1020,9 +1028,11 @@ To push changes to all the branches, run the command;
             git push aliasname --all
 
 IQ
-    How many branches are you supporting in your project?                 
+How many branches are you supporting in your project?
+-----------------------------------------------------
 
 ANSWER
+------
 
     Branches are use to create lines of development in Git
     A branch is a line of development
@@ -1059,6 +1069,7 @@ So before you push to the master or merge code to the master branch,
 the work must be well reviewed
 
 PULL REQUEST (PR)
+-----------------
 
 Pull request (PR) is to review changes in one branch before merging in
 another branch.
