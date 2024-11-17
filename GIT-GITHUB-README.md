@@ -130,7 +130,7 @@ So before codes are commited from the local environment to
 the source code manger (SCM), Git is already installed and applied
 
 When it comes to source code managers (SCMs), 
-We have different source code managers platforms and thses include;
+We have different source code managers platforms and these include;
 
    - Github
    - Gitlab
