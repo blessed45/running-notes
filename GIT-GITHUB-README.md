@@ -168,10 +168,12 @@ For you to connect to Git, the website is;
       website = httpw://github.com/
 
 creating an account in Git requires;
-       - name
-       - email
-       - username
-       - password
+-
+- name
+- email
+- username
+- password
+- 
 After creating an account, you can now login
 using;
         - username
