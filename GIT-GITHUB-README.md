@@ -16,8 +16,8 @@ release1 = version1   = 1000lines of code
    echo 'Hello'
 
 release2 = version2  = 2000lines of code  
-   echo 'Welcome to Paypal'
-   echo "Your convenient payment gateway"
+   echo 'Welcome to Paypal'.
+   echo "Your convenient payment gateway".
 
 Release3  = version3  = 1000 lines of code  
 echo "Paypal the best payment gateway"
