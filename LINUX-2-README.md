@@ -37,18 +37,21 @@ computers are involve
  The big question here now is what types of computers are involve?
 
 PERSONAL COMPUTERS
+-
         
         -laptops, phones, tablets, watches
         - memory = 4gb, 16gb, 32gm, 64gb
         - cost = $400-$2,000  
 
 PROFESSIONAL COMPUTERS
+-
         
         -workstations, laptops, 
         - memory = 8gb----256gb
         - cost = $700-$20,000
 
 ENTERPRISE COMPUTERS
+-
           
           -servers
           - memory = 128gb----4000gb
@@ -95,6 +98,7 @@ This is because the job that 200 worker can do manually in a company can be exec
 engineers, so you see now that companies pay them high and yet still save more money since they have less workers
 
 DEMO
+-
     Any mathematical illustration of how a company make moere money by employing few devOps engineers and sacking
     more manual workers
 
@@ -115,6 +119,7 @@ to our server through ssh protocol
             
             ssh username@serverip-address                 # when using password 
 DEMO
+-
     create a new server and connect to it using different methods
 
 we run this course for like 5-7 months because we want you guys to know hardcore IT from end - end
@@ -125,6 +130,7 @@ this is what a company does for 1million CFA
 in our last class we started looking at some few commands, so we will proceed with that from here
 
 DEMO
+-
     - revise the pass command that was treated in the last class,
     - illustrate with examples and create more files and directores
     - do it to the undertanding of every one
@@ -142,6 +148,7 @@ The command to create a file is called the 'touch' command
        touch = creates a file
 
 TICKET 002
+-
 Create the following files
       
       list.txt               
@@ -149,6 +156,7 @@ Create the following files
       greet.sh
 
 OPTIONS 1
+-
      
      touch list.txt
      touch hello.py
@@ -160,6 +168,7 @@ another level, we can be using GUI as is we are typist, even when we use CLI, we
 The second option will automate the task
 
 OPTION 2
+-
         
         touch list.txt hello.py greet.sh
 
@@ -207,6 +216,7 @@ do a quick double press on the 'shift+z' key to save and quit = press+hold
      press the shift botton and hold, then double click on letter z
 
 DEMO
+-
     illustrate a couple of examples on this
 
 When it comes to modifying files, we can use text editors
@@ -266,8 +276,8 @@ when you use the less or more command, press q to get out of the file
 
 For backup, we create a copy of the file  
 
-       BACKUP FILES
-       ------------
+BACKUP FILES
+------------
 The command to create a copy of a file is 
 
   cp = creates another copy of your file
@@ -303,10 +313,12 @@ to create a symbolic link, run
             ln -s filename newfilename  = creates symbolic links
 
 DEMO
+-
      - Create some hard and soft links of files and demonstrate the differences             
      - differentiate between hard and symbolic link
 
-        FILE MANAGEMENT COMMANDS
+FILE MANAGEMENT COMMANDS
+------------------------
 
   touch                      = creates a file
   vi                         = create a file /or modify/edit a file
@@ -335,8 +347,8 @@ e.g
 
 In this file structure, we have what is called the field of the file or directory
 
-       FIELDS FOR FILES
-       =================
+FIELDS FOR FILES
+=================
 
        r = read
        w = write
@@ -450,13 +462,16 @@ Take note only about this two values because all those calculations were just to
 you how the umask value is derive
 
 IQ
+-
    What is the default umask value of the root user and a normal user
 
 NOTE
+-
     The umask value is what is used to determine the default permissions of a file or directory
     during creation 
 
 DEMO
+-
     illustrate some few files and directories creation and show what happens as far as file 
     permision is concern
 
@@ -481,12 +496,15 @@ This means that the umask value of this kind of file is;
 Set a custom umask value to ensure that all files created should carry 600 permissions
 
 NOTE
+-
       to check the umask value , just run the command  =   umask
 DEMO
+-
     set the required umask value, use the command
 
               umask [required umask valur]
-  e.g    
+  e.g
+  -
             umask 0066 
    
    After doing this, created a file with thw 'touch' command and illustrate the file permission,
@@ -497,10 +515,12 @@ as we move ahead, there is a simpler command that we will be using know as the;
 
                 chmod = this command is use to change file permissions
 i.e
+-
                 chmod 600 filename = is same as setting the umask to 0066, before creating a file 
 So take note
 
 DEMO
+-
     Create some files and directroies while changing their permissions with the chmod command
     Use created files to show how automation access is granted to group and others, illustrating
     the importance of why file permission is very important,
@@ -524,5 +544,6 @@ We can change the owner and the groupowner at the same time, since our job is to
                sudo  chown ownername:grpowner
 
 DEMO
+-
      illustrate how ownership is being changed for owner and groupowner in a directory or file
       demonstrate couple of examples to the understanding of foxes
