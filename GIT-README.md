@@ -429,7 +429,7 @@ paypal will now represent the whole of that url
 
 ==========================================================================================================
 
-                 GIT AND GITHUB 
+                 GIT AND GITHUB 2
 
 All these while, we have been discussing that our task as a DevOps engineer
 include;
@@ -789,7 +789,7 @@ To check a branch in git, we run the command;
 
 ==========================================================================================================
 
-               GIT AND GITHUB 
+               GIT AND GITHUB 3
                ================
 
 As DeVos engineers, our task is to;
