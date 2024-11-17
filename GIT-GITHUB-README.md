@@ -61,8 +61,9 @@ secured
   Centralised:
   cons:
   -
--can't RollBack
--The central server can fail 
+-can't RollBack.
+
+-The central server can fail. 
 
 To that effect, we have what is known as the distributed version
 control system.
