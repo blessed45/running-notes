@@ -1,6 +1,5 @@
-                           Linux 3 
-                           =======
-
+LINUX 3 
+=======
 
 As we know, as DevOps engineers, we work hand in hand with our team to;
             
@@ -33,6 +32,7 @@ Here are some examples of jobs that we will be doing as DevOps engineers
   SRE
 
 DEMO
+-
      illustrate some few platforms 
      demonstrate with diagrams how users are able to connect to the server while
      performing task.
@@ -54,6 +54,7 @@ i.e
      chgrp  
 
 DEMO
+-
     connect to created server and do some revision
     continue with more commands demoanstrations
     'ls' into a file that has more content and demo the 'grep' command 
@@ -62,6 +63,7 @@ In linux, there is a command use to extract pattens from files and that command 
      
           grep  =  sort pattens from files
 DEMO
+-
     demonstrate, with a file that have repaeted names, some with upper case letters and illustrate
     how the grep commands works and explain the case sensitiviy in linux
 
@@ -79,13 +81,17 @@ the next command
 please take note
 
 IQ
+-
  a) what do you undertand by the grep command in linux
 
-ANSWER = the grep command is used to extract pattens from files
+ANSWER
+-
+the grep command is used to extract pattens from files
  
 b) explain the difference between the grep and the pipe commands
 
 DEMO
+-
     - lllustrate how a file can be read and the output stored temporally by the pipe command and
       extract some file content using the grep command
     - demonstrate diagramatically for better understanding
@@ -97,6 +103,7 @@ the sort command
                   
                  sort = re-arrange the file in alphabetical order
 DEMO
+-
      - run the 'sort' command to show how it re-arranges the file in alphabetical order
      - also run the cat /etc/passwd | grep (anyname) | sort
      - run the grep command while ignoring the case sensitivity [grep -i]
@@ -137,6 +144,7 @@ so you have to run the command as the root user as follow
                   sudo date -s "20 Jan 2024 9:00:00"
  
 DEMO
+-
     set the date and time of the server for better understanding, do it first as normal
     user and see the error then as root user
 
@@ -179,6 +187,7 @@ For e.g you are given a task, create users accounts for emma and ernesrt verify
 Remember when we run commands with sudo, we are running the command as the root user 
  
 DEMO
+-
     - create account for emma, start by doing without the sudoers access before applying
       it for better clearity
     - do more demonstrations
@@ -196,6 +205,7 @@ i.e
 Or you check it in the /home directory with the 'ls' command 
 
 DEMO
+-
       'cd' into /etc, 'ls' and do some illustrations
 
 When it comes to accessing files, we have the relativePath and the absolutePath
@@ -203,6 +213,7 @@ When it comes to accessing files, we have the relativePath and the absolutePath
                 relativePath  = starts from pwd
                 absolutePath  = starts from the root directory (/)
 DEMO
+-
     
 To assign or modify pass word for a user, we use the passwd command
 i.e
@@ -222,6 +233,7 @@ For e.g if you want to switch user as root, execute
 
               su - root
 NOTE ,
+-
       if you are connected to a server as a normal user and want to switch to another user,
       the system will ask you for the user's password
 Don't bother, you are going to have a whole book when you start working that contains most
@@ -236,6 +248,7 @@ to be running task/workload in the system as a root user, for security reasons, 
 as normal user
 
 DEMO
+-
      - demo as root user and normal user
 
           $ = normal user
@@ -254,8 +267,8 @@ you are given the previleges to do so,
 To do that, there is a file called the /etc/sudoers , so the admin user will vi into this file 
 and add the the user's name whose previleges are to be elevated
 
-          GRANTING SUDOERS ACCESS
-          =======================
+GRANTING SUDOERS ACCESS
+=======================
 
            sudo vi /etc/sudoers
 
@@ -269,9 +282,11 @@ OR,
      sudo echo "username ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/username        
 
 NOTE,
+-
       by default, the ec2-user comes with sudoers access
 
 DEMO
+-
      - 'vi' into the sudoers file and grant sudo access to a created user
      - also run the second command to illustrate  
 
@@ -364,6 +379,7 @@ i.e
                  id username
 
 DEMO
+-
      illustrate series of examples
 
 Elevate user's previlieges
@@ -376,6 +392,7 @@ either you vi in the file and modify it or you run the below commnd
 
                  sudo echo "username ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/usernam
 DEMO
+-
      - demonstrate while explaining detailly for more understanding 
      - grant sudo access to some created users in the system or create new users and and assign 
        sudoers access to them
@@ -390,12 +407,14 @@ i.e
    passing the sudo flag 
 
 DEMO
+-
      switch to a user with elevated privileges and assign password to anothe user
 
 To remove sudo access from users, vi into the /etc/sudoers file and modify the files
 by deleting the user from the sudoers file
 
 DEMO
+-
      illustrate how to remove a user from the sudoers file
 
 For example if someone is at work and not doing anything, what do you think we can do to that
@@ -415,6 +434,7 @@ and the command is;
                      sudo chage username
 
 DEMO
+-
     illustrate while explaining all the parameters
     i.e
        minimum password age [0]:
@@ -428,8 +448,8 @@ So with this chage command, we can set some default value for a user
 
 Now we have understood some basic user management commands
 
-
 HOW CAN A USER ACCESS THE SERVER/EC2 INSTANCE EXTERNALLY USING PASSWORD
+-
 Take note of this, it's very important
  
 For you to do that, the server must be configure such that it can be access externally
@@ -445,6 +465,7 @@ There two ways of doing that;
                          
 
 OR
+-
 
 2)   We vi into a file called (/etc/ssh/sshd_config) and change passwd authentication = NO to passwd authentication = YES
 after that, save and quite
@@ -474,6 +495,7 @@ because if you vi into that file and mess it up, you will not be able to log int
 again, either through ssh or password and/or externally
  
 DENO
+-
      - demonstrate by vi into the file, then run the command
 
 
