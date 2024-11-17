@@ -1,4 +1,5 @@
                  GIT AND GITHUB 1
+                 ----------------
                  
 Software Development lifecycle (SDLC)
 -------------------------------------
@@ -430,6 +431,7 @@ paypal will now represent the whole of that url
 ==========================================================================================================
 
                  GIT AND GITHUB 2
+                 ----------------
 
 All these while, we have been discussing that our task as a DevOps engineer
 include;
