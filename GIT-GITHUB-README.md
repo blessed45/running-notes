@@ -176,8 +176,9 @@ creating an account in Git requires;
 - 
 After creating an account, you can now login
 using;
-        - username
-        - password
+
+- username
+- password
 
 How To Create An organisation
 ----------------------------
