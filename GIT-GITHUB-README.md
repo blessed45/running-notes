@@ -61,7 +61,7 @@ secured
   Centralised:
   cons:
   -
--can't RollBack.
+-can't RollBack
 
 -The central server can fail. 
 
