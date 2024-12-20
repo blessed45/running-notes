@@ -85,13 +85,13 @@ you will see a tag as below
 <distributionManagement>
             <repository>
               <id>nexus</id>
-              <name>Landmark Technologies Releases Nexus Repository</name>
+              <name>Atangoinfotech Releases Nexus Repository</name>
               <url>http://18.204.7.129:8081/repository/releases/</url>
             </repository>
 
             <snapshotRepository>
               <id>nexus</id>
-              <name>Landmark Technologies Snapshot Nexus Repository </name>
+              <name>Atangoinfotech Snapshot Nexus Repository </name>
               <url>http://18.204.7.129:8081/repository/snapshots/</url>
             </snapshotRepository>
 
