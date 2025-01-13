@@ -9,9 +9,13 @@ A computer comprises of a hardware and a software component
 # Hardware
 
 **1. Central Processing Unit (CPU):** The brain of the computer, responsible for executing instructions and processing data.
+
 **2. Memory (RAM):** Temporary storage that holds data and instructions currently in use, allowing for quick access.
+
 **3. Storage:** Permanent storage for data and programs, typically in the form of hard drives (HDD) or solid-state drives (SSD).
+
 **4. Input Devices:** Tools used to enter data into the computer, such as keyboards, mice, and scanners.
+
 **5. Output Devices:** Components that convey information to the user, such as monitors, printers, and speakers.
 
 # Software:
@@ -95,7 +99,7 @@ NOW;
 We either use the GUI or CLI
 
 1. GUI = graphical user interface
-2. CLI = command line interface
+3. CLI = command line interface
 
 what kind of workload can be exicuted on computer systems
 we use computers to;
