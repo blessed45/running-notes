@@ -338,7 +338,7 @@ DEMO
 
 **1) bin -** contains binary files(commands) like ls, pwd, clear, cd, touch, mkdir etc
    
-         Some other simple command that we will running include
+         Some other simple command that we will be running include;
 
              cd      # change directory
              touch   # creates a file
