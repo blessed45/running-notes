@@ -195,9 +195,9 @@ some of these include;
 Before we enter into the linux file structure, let us start by seeing how we can 
 create and connect to a linux Os
 
-## CREATING A LINIX SYSTENM
+## CREATING A LINUX SYSTENM
 
-1. if you were going to create a linix system, you can either buy a server from the 
+1. if you were going to create a linux system, you can either buy a server from the 
    market and configure the server
    cost = $50,000
    Time = 100x
