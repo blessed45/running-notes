@@ -1,12 +1,12 @@
 # LINUX 1 
 
-# WHAT IS A CUMPUTER
+## WHAT IS A CUMPUTER
 
 A computer is an electronic device that processes data according to a set of instructions called programs. It can perform a wide range of tasks, including calculations, data storage, and communication, making it an essential tool in various fields.
 
 A computer comprises of a hardware and a software component
 
-# Hardware
+## Hardware
 
 **1. Central Processing Unit (CPU):** The brain of the computer, responsible for executing instructions and processing data.
 
@@ -18,7 +18,7 @@ A computer comprises of a hardware and a software component
 
 **5. Output Devices:** Components that convey information to the user, such as monitors, printers, and speakers.
 
-# Software:
+## Software:
 
 1. Operating System (OS): The main software that manages hardware and software resources (e.g., Windows, macOS, Linux).
 2. Applications: Programs designed to perform specific tasks, such as word processing, web browsing, and gaming.
@@ -26,20 +26,20 @@ A computer comprises of a hardware and a software component
 computers are manufacture by manufactureres and they include;
 levono/ dell/ apple/ toshiba/ yoya/ samsung/ sony/ LG/ Acer/ HP   etc
 
-# CLASSES OF COMPUTER
+## CLASSES OF COMPUTER
 
 Computers are classified under;
 
-# personal class computers = these are computers used for personal use
+## personal class computers = these are computers used for personal use
 
 these types of computers include; lenovo/ destop/ laptop/ phones/ notepads/ tablets/ watches/ ipads/  etc
 
-# enterprise computers;
+## enterprise computers;
 
 they include; workstations/ servers (super computers)
 
 
-# what qualifies a computer is the OS
+## what qualifies a computer is the OS
 
 the operating system running in a computer defines the type;
 examples of os include
@@ -57,7 +57,7 @@ dell with windows = windows system
 is it possible for a computer to have more than onme opereting system?  the answer is yes
 and you can also change the operating system form one to another and vice versa
 
-## WHAT DETERMINE THE CHOICE OF OS
+# WHAT DETERMINE THE CHOICE OF OS
 
 
 **1. SECURITY**
@@ -87,7 +87,7 @@ and you can also change the operating system form one to another and vice versa
 **9. SCALABILITY AND ELASTICITY**
 
 
-## NOW WE WANT TO TALK ABOUT LINUX OPERATING SYSTEMS AND ITS IMPORTANCE
+# NOW WE WANT TO TALK ABOUT LINUX OPERATING SYSTEMS AND ITS IMPORTANCE
 
 NOW;
    How are tasks runned or exicuted on a computer
@@ -118,7 +118,7 @@ we use computers to;
 12. training
 13. make money
 
-# HOW CAN WE USE A COMPUTER TO MAKE MONEY
+## HOW CAN WE USE A COMPUTER TO MAKE MONEY
 
 **1 GUI**
     A fox using gui make like $65.000 per year
@@ -135,7 +135,7 @@ The person that uses gui take like about 20munites to create 20files while that 
 can take 3munits, so cli is more paid than gui users
 
 
-## LINUX OS AND LINUX COMMANDS
+# LINUX OS AND LINUX COMMANDS
 
 
 Linux is an open source operating system
@@ -162,7 +162,7 @@ A solfware can be free / open source/ licence
 **3. Licenced**
            Paid for the OS
 
-# IQ
+### IQ
 
    Explain your experience with open source technology; linux
 **ANSWER**
@@ -190,12 +190,12 @@ some of these include;
  9. Amazon Linux 2AMI
 10. Debian
 
-## THE LINUX FILE SRUCTURE
+# THE LINUX FILE SRUCTURE
 
 Before we enter into the linux file structure, let us start by seeing how we can 
 create and connect to a linux Os
 
-# CREATING A LINIX SYSTENM
+## CREATING A LINIX SYSTENM
 
 1. if you were going to create a linix system, you can either buy a server from the 
    market and configure the server
@@ -219,7 +219,7 @@ which of these will you prefer?
 
 For us to create a linux OS we need an account in AWS cloud
 
-## CREATING AN ACCOUNT IN AWS CLOUD
+# CREATING AN ACCOUNT IN AWS CLOUD
 
 
 Requirements;
@@ -236,7 +236,7 @@ e.g
     ,,/ ../ ?/ #/ @ something like this for special characters
 
 
-## CREATING/LAUNCHING A SERVER/INSTANCE
+# CREATING/LAUNCHING A SERVER/INSTANCE
 
 After creating your aws account, you can nowlaunce a server, in linux we it an instance,
 log into your aws console and search for EC2 , click on it and you will see an instruction
@@ -249,14 +249,14 @@ seconds and you will see see a green running state coloration. that shows your s
 the key pair that you created will be downloaded into your computer, if you go to your download, you'll find
 it there, and this is the key pair you will be using with the server ip to access your server
               
-## HOW TO CONNECT TO THE SERVER
+# HOW TO CONNECT TO THE SERVER
 
 To access the server you created, you need ;
             ipaddress of server
             username
             password/key pair 
 
-# CONNECT TO YOUR LINUX SERVER IN AWS USING SSH CLIENT/PROTOCOL
+## CONNECT TO YOUR LINUX SERVER IN AWS USING SSH CLIENT/PROTOCOL
 
 After creating an instance and obtaining the above requirements, for us to them to 
 connect to our server that we created in aws, we need an ssh client solfware, 
@@ -290,7 +290,7 @@ those with mac computers should take note
 
 After connecting the next thing to do is to start running tasks
 
-# Download the following solfwares
+## Download the following solfwares
 
 sublime text  =  this is a text editor
 brakets       = text editor
@@ -299,7 +299,7 @@ mobaxterm     = ssh client software
 you can download sublime text same way we did with mobaxterm
 
 
-## THE LINUX FILE STRUCTURE
+# THE LINUX FILE STRUCTURE
 
                       WINDOWS         LINUX
                     . fILES          .fILES         
@@ -310,7 +310,7 @@ in the windows file structure, the principal directory is (c:) this implies that
 begins with (c), while in linux it is a forward slash (/)
 A directroy/folder is a container that contains files and sub-folders
 
-# LINUX FILE STRUCTURE
+## LINUX FILE STRUCTURE
 
 linux root directroy = /
 
@@ -376,7 +376,7 @@ file but these files/commands can only be executed by the admin users or root us
 ***e.g*** adduser, create passwd to users, change name of server etc
 
 
-# IQ
+### IQ
   what is the difference between bin and sbin directories in linux
 **ANSWER**
     sbin are binary files only executable by users with administrative or elevated privileges
@@ -406,7 +406,7 @@ file but these files/commands can only be executed by the admin users or root us
           cpuinfo
  
 
-## SIMPLE/BASIC LINUX COMMANDS
+# SIMPLE/BASIC LINUX COMMANDS
 
 Run task/wprkload using commands
 if we don't want to use commands we can use GUI
@@ -419,14 +419,14 @@ we have a new client = atango
 
 You are given anew ticket to carry out task for ur client
 
-# TICKET
+### TICKET
 Create work directories for atango.
 They want you to create a directory called
 1) devops
 2) dev/maven/git/aws/nexus/java     
 
 
-## CREATING, NAVIGATING AND MANAGING DIRECTORIES
+# CREATING, NAVIGATING AND MANAGING DIRECTORIES
 
 The first command is
 
@@ -475,7 +475,7 @@ DEMO
     how to install the tree command and use it to list the directories
 deletes some created directories and do more demonstrations
 
-# LET US SEE HOW WE CAN NAVIGATE DIRECTORIES 
+## LET US SEE HOW WE CAN NAVIGATE DIRECTORIES 
 
 We navigate directories by using the cd command
 
