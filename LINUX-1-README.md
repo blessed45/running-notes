@@ -60,19 +60,26 @@ and you can also change the operating system form one to another and vice versa
        85% OF SERVERS ARE LINUX BASED
        linux systems are not vulnerable to virus attacks
        windows systems are vulnerable to varis attacks
+       
 **3. COST**
       linux is a free and open source OS
       windows is a licenced/paid OS
+      
 **4. SUPPORT**
          linux has a very large effective and free community support
          windows support is avalaible but paid only from mmicrosoft
          (vendor) 
+         
 **5. USAGE**
         LINUX OS IS MOSTLY UTILISED FOR ENTERPRISE TASKS
         WINDOWS IS UTILISED AS WORKSTATIONS 
+        
 **6. PERFORMERS**
+
 **7. REVIEWS**
+
 **8. SPEED**
+
 **9. SCALABILITY AND ELASTICITY**
 
 
