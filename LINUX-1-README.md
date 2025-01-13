@@ -1,36 +1,42 @@
-LINUX 1 
-=======
+## LINUX 1 
 
-WHAT IS A CUMPUTER
-------------------
+# WHAT IS A CUMPUTER
+
+A computer is an electronic device that processes data according to a set of instructions called programs. It can perform a wide range of tasks, including calculations, data storage, and communication, making it an essential tool in various fields.
 
 A computer comprises of a hardware and a software component
 
-the hardware components include
-monitor, cpu, screeen keybord, mouise, harddrive, RAM, cards, motherbord
+# Hardware
 
-software component
-1) os = operating system  == this is the principal software in a computer
-2) other solfwares - office, adobe, antivirus
+**1. Central Processing Unit (CPU):** The brain of the computer, responsible for executing instructions and processing data.
+**2. Memory (RAM):** Temporary storage that holds data and instructions currently in use, allowing for quick access.
+**3. Storage:** Permanent storage for data and programs, typically in the form of hard drives (HDD) or solid-state drives (SSD).
+**4. Input Devices:** Tools used to enter data into the computer, such as keyboards, mice, and scanners.
+**5. Output Devices:** Components that convey information to the user, such as monitors, printers, and speakers.
+
+# Software:
+
+1. Operating System (OS): The main software that manages hardware and software resources (e.g., Windows, macOS, Linux).
+2. Applications: Programs designed to perform specific tasks, such as word processing, web browsing, and gaming.
 
 computers are manufacture by manufactureres and they include;
 levono/ dell/ apple/ toshiba/ yoya/ samsung/ sony/ LG/ Acer/ HP   etc
 
-CLASSES OF COMPUTER
--------------------
+# CLASSES OF COMPUTER
+
 Computers are classified under;
 
-personal class computers = these are computers used for personal use
--
+# personal class computers = these are computers used for personal use
+
 these types of computers include; lenovo/ destop/ laptop/ phones/ notepads/ tablets/ watches/ ipads/  etc
 
-enterprise computers;
--
+# enterprise computers;
+
 they include; workstations/ servers (super computers)
 
 
-what qualifies a computer is the OS
--
+# what qualifies a computer is the OS
+
 the operating system running in a computer defines the type;
 examples of os include
 linux/ 
@@ -47,36 +53,36 @@ dell with windows = windows system
 is it possible for a computer to have more than onme opereting system?  the answer is yes
 and you can also change the operating system form one to another and vice versa
 
-WHAT DETERMINE THE CHOICE OF OS
-------------------------------
+## WHAT DETERMINE THE CHOICE OF OS
 
-1. SECURITY
+
+**1. SECURITY**
        85% OF SERVERS ARE LINUX BASED
        linux systems are not vulnerable to virus attacks
        windows systems are vulnerable to varis attacks
-3. COST
+**3. COST**
       linux is a free and open source OS
       windows is a licenced/paid OS
-4. SUPPORT
+**4. SUPPORT**
          linux has a very large effective and free community support
          windows support is avalaible but paid only from mmicrosoft
          (vendor) 
-5. USAGE
+**5. USAGE**
         LINUX OS IS MOSTLY UTILISED FOR ENTERPRISE TASKS
         WINDOWS IS UTILISED AS WORKSTATIONS 
-6. PERFORMERS
-7. REVIEWS
-8. SPEED
-9. SCALABILITY AND ELASTICITY
+**6. PERFORMERS**
+**7. REVIEWS**
+**8. SPEED**
+**9. SCALABILITY AND ELASTICITY**
 
 
-NOW WE WANT TO TALK ABOUT LINUX OPERATING SYSTEMS AND ITS IMPORTANCE
-====================================================================
+## NOW WE WANT TO TALK ABOUT LINUX OPERATING SYSTEMS AND ITS IMPORTANCE
+
 NOW;
    How are tasks runned or exicuted on a computer
    How are tasks perfomed om computer systems
 
-Question
+**Question**
    For one or more of the following operating systems to run workload on computer systems;
 
 We either use the GUI or CLI
@@ -90,7 +96,7 @@ we use computers to;
 1 create files and content
 2. modify files
 3. create folders and directories
-$. create sub-filders
+4. create sub-filders
 5. sent emails
 6. download filess
 7. watch movies
@@ -101,16 +107,14 @@ $. create sub-filders
 12. training
 13. make money
 
-HOW CAN WE USE A COMPUTER TO MAKE MONEY
----------------------------------------
-1 GUI
+# HOW CAN WE USE A COMPUTER TO MAKE MONEY
+
+**1 GUI**
     A fox using gui make like $65.000 per year
     they do jobs like
    administrative assistance/ customer service/ 
 
-DEMO GUI
-
-2. CLI
+**2. CLI**
       to access the computer using commands, you need a command line
       The windows os comes with a command line called powershell
       MacOS comes with terminal as command line
@@ -120,8 +124,8 @@ The person that uses gui take like about 20munites to create 20files while that 
 can take 3munits, so cli is more paid than gui users
 
 
-LINUX OS AND LINUX COMMANDS
-==============================
+## LINUX OS AND LINUX COMMANDS
+
 
 Linux is an open source operating system
 Linux started in 1991 by LINUS TORLVADS
@@ -138,22 +142,22 @@ while windows/ solaris/ macOs/ etc are licenced OS
 
 A solfware can be free / open source/ licence
 
-1. Open Source
+**1. Open Source**
              Free with tghe source code
              Open source software has more community support
-2. Free 
+**2. Free** 
        its free but without the source coed
 
-3. Licenced
+**3. Licenced**
            Paid for the OS
 
-IQ
---
+# IQ
+
    Explain your experience with open source technology; linux
-ANSWER
+**ANSWER**
       With open source technology , the solfware is free including the source code (recipe/secret of the software)
 DEMO
----
+
   You are invited by a friend for dina, you arrive and you served food and how the food was prepared, we can say here 
 that you were served an open source food
 another friend invits you for dina, serve you foor without telling you hiw the food was orepared, we say here that you 
@@ -175,14 +179,13 @@ some of these include;
  9. Amazon Linux 2AMI
 10. Debian
 
-TEH LINUX FILE SRUCTURE
-=======================
+## THE LINUX FILE SRUCTURE
 
 Before we enter into the linux file structure, let us start by seeing how we can 
 create and connect to a linux Os
 
-CREATING A LINIX SYSTENM
-------------------------
+# CREATING A LINIX SYSTENM
+
 1. if you were going to create a linix system, you can either buy a server from the 
    market and configure the server
    cost = $50,000
@@ -205,8 +208,8 @@ which of these will you prefer?
 
 For us to create a linux OS we need an account in AWS cloud
 
-CREATING AN ACCOUNT IN AWS CLOUD
-================================
+## CREATING AN ACCOUNT IN AWS CLOUD
+
 
 Requirements;
            website  =   aws.amazon.com
@@ -222,8 +225,7 @@ e.g
     ,,/ ../ ?/ #/ @ something like this for special characters
 
 
-CREATING/LAUNCHING A SERVER/INSTANCE
-====================================
+## CREATING/LAUNCHING A SERVER/INSTANCE
 
 After creating your aws account, you can nowlaunce a server, in linux we it an instance,
 log into your aws console and search for EC2 , click on it and you will see an instruction
@@ -236,16 +238,14 @@ seconds and you will see see a green running state coloration. that shows your s
 the key pair that you created will be downloaded into your computer, if you go to your download, you'll find
 it there, and this is the key pair you will be using with the server ip to access your server
               
-HOW TO CONNECT TO THE SERVER
-===========================
+## HOW TO CONNECT TO THE SERVER
 
 To access the server you created, you need ;
             ipaddress of server
             username
             password/key pair 
 
-CONNECT TO YOUR LINUX SERVER IN AWS USING SSH CLIENT/PROTOCOL
--------------------------------------------------------------
+# CONNECT TO YOUR LINUX SERVER IN AWS USING SSH CLIENT/PROTOCOL
 
 After creating an instance and obtaining the above requirements, for us to them to 
 connect to our server that we created in aws, we need an ssh client solfware, 
@@ -270,7 +270,7 @@ on your mobaxterm you can also choose local session ans run the ssh command as f
     
 ssh -i keypair.pem username@server ipsddress
  
-FOR MAC USERS/APPLE USRS DO THIS,
+**FOR MAC USERS/APPLE USRS DO THIS,**
 
      chmod 400 keypair.pem = to ensure that your key is not publicly view
      ssh -l keypair.pem user@serveripaddress
@@ -279,8 +279,8 @@ those with mac computers should take note
 
 After connecting the next thing to do is to start running tasks
 
-Download the following solfwares
-=================================
+# Download the following solfwares
+
 sublime text  =  this is a text editor
 brakets       = text editor
 mobaxterm     = ssh client software
@@ -288,8 +288,7 @@ mobaxterm     = ssh client software
 you can download sublime text same way we did with mobaxterm
 
 
- THE LINUX FILE STRUCTURE
-==========================
+## THE LINUX FILE STRUCTURE
 
                       WINDOWS         LINUX
                     . fILES          .fILES         
@@ -300,8 +299,7 @@ in the windows file structure, the principal directory is (c:) this implies that
 begins with (c), while in linux it is a forward slash (/)
 A directroy/folder is a container that contains files and sub-folders
 
-LINUX FILE STRUCTURE
---------------------
+# LINUX FILE STRUCTURE
 
 linux root directroy = /
 
@@ -318,16 +316,16 @@ now you will the our hostname has been changed
 
 So now if we execute 'ls' which stands for list the content of the directory, 
        
-           e.g     ls /
+               ls /
    
 we will find out that the linux root directory has some content in it, lets run and see
 
 DEMO 
     ls /   copy the content of it and explain the content of what is in the important directories
 
- e.g  
+ ***e.g***  
 
-1) bin - contains binary files(commands) like ls, pwd, clear, cd, touch, mkdir etc
+**1) bin -** contains binary files(commands) like ls, pwd, clear, cd, touch, mkdir etc
    
          Some other simple command that we will running include
 
@@ -338,7 +336,9 @@ DEMO
     cd / and list its content with ls
 
 home directory - contains users home directory details
-     run the command ls /home  = this will list the content of the home derictroy
+run the command
+
+            ls /home  # this will list the content of the home derictroy
 
 [ec2-user@demo ~]$ ls /home
 ec2-user
@@ -349,7 +349,7 @@ a user to the server, so we need some privileges, in linux , we say you need roo
 or sudo access, 
 sudo simply means you are running the task as the root user
 now if we run 
-            sudo adduser emma
+                  sudo adduser emma
 it will create a new user in our server called emma 
 we can even add as many users as we wish, say; president, dominion, obi etc
 
@@ -359,44 +359,43 @@ so lets now run ls /home and see what we have there
 
 let us check at one other directory
 
-2) sbin = this directory contain system binary files/commands
+**2) sbin -** this directory contain system binary files/commands
 we talked about the bin directory containing binary files, similally the sbin contains binary 
 file but these files/commands can only be executed by the admin users or root users 
-e.g adduser, create passwd to users, change name of server etc
+***e.g*** adduser, create passwd to users, change name of server etc
 
 
-IQ
+# IQ
   what is the difference between bin and sbin directories in linux
-ANSWER
+**ANSWER**
     sbin are binary files only executable by users with administrative or elevated privileges
     or admin/root user while bin are binary files executable by any user
 
-3) etc = contains configuration files
+**3) etc -** contains configuration files
         /etc/shadow           = contains passwd of users
         /etc/passwd           = contains users imformation
         /etc/ssh/sshd_config  = ssh configuration details - determines if someone will use an ssh key or passwd
 
-4) tmp = contains temporal files
+**4) tmp -** contains temporal files
          if you want to create some temporally files, this is where to create
 
-5) opt = where software and packages are install
+**5) opt -** where software and packages are install
           install and download all packages/software in this directory
 
-6) lib = library files
+**6) lib -** library files
           put all library files here
 
-7) var = contains dynamic files
+**7) var -** contains dynamic files
           /var/log/messages  
    this contains dynamic files like log, what ever is happening in your server is recorded in the log file
-e.g if you are unable to access your your server , there are some files e.g var/log/messages that you can go there to check
+***e.g*** if you are unable to access your your server , there are some files e.g var/log/messages that you can go there to check
 
-8) proc = contains information about our server, the hardware component
+**8) proc -** contains information about our server, the hardware component
           meminfo
           cpuinfo
  
 
-SIMPLE/BASIC LINUX COMMANDS
-===========================
+## SIMPLE/BASIC LINUX COMMANDS
 
 Run task/wprkload using commands
 if we don't want to use commands we can use GUI
@@ -409,47 +408,47 @@ we have a new client = atango
 
 You are given anew ticket to carry out task for ur client
 
-TICKET 001
-----------
-       create work directories for atango
-they want you to create a directory called
-       1) devops
-       2) dev/maven/git/aws/nexus/java     
+# TICKET
+Create work directories for atango.
+They want you to create a directory called
+1) devops
+2) dev/maven/git/aws/nexus/java     
 
 
-CREATING, NAVIGATING AND MANAGING DIRECTORIES
-=============================================
+## CREATING, NAVIGATING AND MANAGING DIRECTORIES
 
 The first command is
 
-       mkdir =  will creates a directory
+               mkdir  # will creates a directory
 
 if you create a wrong directory , you can delete the directory with
-     rmdir = this command will deletes an empty directory(no content)
+
+           rmdir    # this command will deletes an empty directory(no content)
 
 if the directory has content, we delete it with
-      rm -rf - deletes a directory with content
+           
+           rm -rf    # deletes a directory with content
 
 now if i want to navigate from one directory to another, the command is
-         cd
+              cd
 
 to know my present working directroy, the command is 
-          pwd
+              pwd
 
 listing the content of a directory, the command is 
-          ls
+              ls
 
 Run a command mkdir -v directiryname
 where -v = verbose mode
 
 DEMO
----
-    illustrate series of directory creations and demonstrations
+illustrate series of directory creations and demonstrations
 
 To create a directory in this formate, dev/maven/git/was/nexus/java,  
 we need to add -p , where -p stands for creating both the parent and child directory
 i.e 
-    mkdir -p directories or mkdir -vp directories
+               mkdir -p
+               mkdir -vp 
 
 when you create a directory like this and run the command 'ls' , you only see the parent
 directory, to see all the directories, we will run a command call the 
@@ -460,22 +459,20 @@ this command, you must have root privileges/admin by using sudo, do not forget t
 sudo, it permits you to switch or run commands as another user
 so to install the tree command, run
 
-         sudo yum install tree
+                   sudo yum install tree
 DEMO
-----
     how to install the tree command and use it to list the directories
 deletes some created directories and do more demonstrations
 
-LET US SEE HOW WE CAN NAVIGATE DIRECTORIES 
-------------------------------------------
+# LET US SEE HOW WE CAN NAVIGATE DIRECTORIES 
+
 We navigate directories by using the cd command
 
 DEMO
-----
     demonstrate how we can move from one directory to another,
 demonstrate how to navogate directories as dev/maven/git/was/nexus/java
-i.e
----
+**i.e**
+
     cd ..
     cd ../..
     cd ../../..
@@ -484,7 +481,13 @@ i.e
 
 you may have to switch from one directory to another so please take note
 
-if i do ls pwd = it will list the content of my present working directory
-le dev = list the content in the dev directory
-ls /home = list the content of the /home directory
-le /dev = list the content of the /dev home director
+            ls pwd        # it will list the content of my present working directory
+
+list the content in the dev directory 
+
+           ls dev
+list the content of the /home directory  
+
+           ls /home 
+list the content of the /dev home director
+            ls /home 
