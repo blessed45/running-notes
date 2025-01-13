@@ -316,9 +316,9 @@ linux root directroy = /
 
 some few basic commands 
               
-              ls  = list the content of a directory
-              pwd = present working directory
-              hostname = tell you the hostname of your server
+              ls   # list the content of a directory
+              pwd  # present working directory
+              hostname  # tell you the hostname of your server
 if i run the command 
                   sudo hostname set-hostname demo  = it will change the host name of the server
 to view changes, we switch to a user
@@ -340,9 +340,9 @@ DEMO
    
          Some other simple command that we will running include
 
-             cd    =  change directory
-             touch = creates a file
-             mkdir = creates a directory
+             cd      # change directory
+             touch   # creates a file
+             mkdir   # creates a directory
 DEMO
     cd / and list its content with ls
 
