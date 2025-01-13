@@ -11,8 +11,8 @@ Bash Shell Sripting
 Platform/Kubernetes/Infrastructure Engineering****
 
 
-Automating IT processes/workloads with GUI/CLI and Scripting
-=============================================================
+***Automating IT processes/workloads with GUI/CLI and Scripting***
+
 Automating IT:
    processes
    workloads 
