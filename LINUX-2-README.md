@@ -13,13 +13,21 @@ As a devOps engineer, you will be working with your team to;
 ===========================================================
 
 develop: Applications
+
 Test: Applications
+
 Build: Applications
+
 Review and qualiry: Applications
+
 Secure: Applications
+
 Deploy: Applications
+
 Access: Applications
+
 Maintain: Aapllications
+
 Manage and monitor: Applications
 
 All these jobs are done by using automated computerise technologies
