@@ -39,13 +39,14 @@ e.g
         
         login information
         user name
-        caed number  
+        card number  
     
-    to access your account, you some credentials and all those credentials are jobs done by devOps engineers
-    i.e all the log in imformation or registrations in banks are done by devOps engineers, so as a devOPs engineer,
-    you will work with your team of to develop, test, builded, review, secure, deploy, access, maintain, manage and minitor
+    to access your account, you need some credentials and all those credentials are jobs done by devOps engineers
+    i.e all the login information or registrations in banks are done by devOps engineers, so as a devOPs engineer,
+    you will work with your team to develop, test, builded, review, secure, deploy, access, maintain, manage and minitor
+    applications
  
-As we said, all this is done by using computarise automated solutions, so generally, if we use compurised solutions, this means
+As we said, all this is done by using computerise automated solutions, so generally, if we use computerised solutions, this means
 computers are involve 
  The big question here now is what types of computers are involve?
 
@@ -86,7 +87,7 @@ what we can do in a bank
              create account, tranfer money, exchange, withdrawal, cash deposit,
              cheque deposit, loan, overdraft
 
-for this work to be done, a bank like ECHO bank will need to imploy like 900 workers 
+for this work to be done, a bank like Ecobank will need to imploy like 900 workers 
 to be executing this job and most of them do this job manually, 
 
 Now devOps engineers develop, test, build, qualify, deploy, manage and monitor applications
