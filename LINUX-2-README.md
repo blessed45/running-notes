@@ -365,7 +365,7 @@ FIELDS FOR FILES
 =================
 
        r = read
-       w = write
+       w = write       
        x = execute
 
        1) type  =  here;    [- = stands for a file,  d = stands for a directory and l = stands for a symbolic link]
