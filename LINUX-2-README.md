@@ -439,7 +439,9 @@ you will find out that they have different permissions
 From the above default values of permissions, we can now say 
 
                   owner        groupowner       others       default permission
+                  
 directory         rwx = 7      r-x = 5         r-x = 5             755
+
 file               rw = 6      r-- = 4         r-- = 4             644
 
 all what we have done here is known as the default permissions of files
@@ -461,10 +463,14 @@ The difference between the full permission and the defaul permision is called th
 
            the UMASK value      
 i.e
-                      file     directory        
-   full permisions    0666      0777    
+                      file     directory 
+                      
+   full permisions    0666      0777 
+   
    default perm.      0644      0755
+   
                      ------    ------ 
+                     
     umask value       0022      0022 
 
 So from our calculation, we have all seen that the umaxk value is;
@@ -503,8 +509,11 @@ and now, we are expected to create a file with custom permissions 0600
 This means that the umask value of this kind of file is;
 
    default full permisions           0666
+   
    required permission             - 0600
+   
                                    -------
+                                   
    umask                             0066
 
 Set a custom umask value to ensure that all files created should carry 600 permissions
