@@ -1,0 +1,1565 @@
+                            CONTAINERIZATION
+DOCKER
+======
+
+Docker -- Is a containerization multi-platform software use to create, build
+          ship, share and deploy applications as containers
+
+            Build applications  
+            ship applications  
+            deploy applications
+
+IQ: How many environmentS are you supporting in your CURRENT role??
+         Development environment    
+         Testing/QA environment    
+         Production environment
+
+Containers --> contains are everything required for an application to run create
+               (App Files (code), Dependencies 
+              (Softwares +Libraries), ENV vars & Other Configuration files) 
+              which is required for a piece of application/process to run.
+
+
+           app.war   -----> Virtual Machine  
+                           java and Tomcat installed and configured
+                           
+
+
+Containerise the following applications 
+   app code     = app.war + 
+   Dependencies = tomcat9 + openjdk11+
+
+   app code     = app.ear + 
+   dependencies = openjdk11+ + jboss/wildFly 
+
+   app code     = app.jar + 
+   dependencies = java1.8+ 
+   
+vertualisation deployments most of the times faces environmental issues/differences
+
+    dev  --- application working well in dev
+    test --- application working well in test
+    prod --- application failing in pod
+
+Containerization Software/Runtime include --> :
+  Docker, = over 80% usage  
+  Rocket, 
+  Pod man, 
+  CRI-O, 
+  Core-OS,
+  Container-D. 
+  
+Docker:  
+  Is a containerization multi-platform software use to;    
+  create, build, ship, share and deploy containerize applications  
+
+O.S --> Cross Platform (Docker can be installed in any O.S)
+        Docker Can Be Installed on Linux, Windows OS, macOS  
+        Desktops as well as servers.
+For you to install docker, it all depends on the edition        
+
+Docker is available in 2 Editions:
+
+ 1) Docker CE: --> Community Edition (Free to use)
+ 2) Docker EE: --> Enterprise Edition (Commercial/Licensed)
+     CE+
+     ---
+      1) Vendor Support = docker.io 
+      2) Additional Features like DTR (Docker Trusted Registry),
+      3) UCP (Universal Control Plane) GUI.
+
+Docker Desktop (Local Laptops/Desktops) --> 
+https://docs.docker.com/engine/install/#desktop
+
+Linux Flavors :
+ CentOS
+ Amazon Linux
+    Red Hat   :
+ Ubuntu
+ Debian
+ Fedora
+ SUSE Linux …etc.
+ 
+Officially, Docker CE is not supported for Red Hat.
+
+Install Docker on  Ubuntu
+###########################
+#!/bin/bash
+sudo apt update -y
+sudo apt install docker.io -y
+sudo service docker start
+sudo docker info
+sudo hostnamectl set-hostname docker 
+sudo usermod -aG docker ubuntu
+sudo su - ubuntu
+======================================
+
+ # Amazon Linux
+###########################
+#!/bin/bash
+sudo yum update -y
+sudo hostnamectl set-hostname docker    
+sudo yum install docker -y
+sudo service docker start
+sudo usermod -aG docker ec2-user
+sudo su - ec2-user
+
+NB:
+Add Regular users to docker group for them to run docker commands/tasks  
+sudo usermod -aG docker <username>
+
+
+
+
+
+
+
+
+
+======================================================================================================================================================================================================
+
+
+
+
+
+
+Dockerfiles:
+============ 
+Dockerfile is a simple file of instructions usaually written by DevOps Engineers use to build a docker image
+Dockerfiles are input use to build docker images    
+Docker images are input needed/used to create containerised applications
+
+Ticket 01
+
+Use the repo url to clone a web-app
+Create Artifacts using maven
+use docker to build an image
+
+https://github.com/Solavisetech-Team/maven-web-app.git
+
+Dockerfile
+----------
+
+FROM tomcat:8.0.20-jre8
+
+MAINTAINER Atanga <ndecalamba@gmail.com>
+
+EXPOSE 8080
+
+COPY target/maven-web-app.war /usr/local/tomcat/webapps/maven-web-app.war
+
+
+
+Docker Image: --> It's a package which contains
+                 everything (+Application Code + Libraries, Softwares+ENV)
+                 needed to run your application. 
+
+Command use to build an image --> docker build -t application-name <Docker-file path>
+
+Docker run --name <appname> -d -p 8080:8080 imagename
+
+docker ps --> list containers
+
+Some advantages of docker 
+
+1) Rapid application deployment: containers include the minimal run time requirements of the application, reducing their size and allowing them to be deployed quickly
+
+2) Portability across machines: an applications and all its dependencies can be bundled into a single container taht is independent from host version of Linux kernel, platform distribution, or deployment model. This container can be transferred to another machin that runs docker, and execute there without compatibility issues.
+
+3) Version control and component reuse: you can tract successive versions of a container, inspect differences, or roll-back to previous versions, Containers reuse component from preceding layers (base image), which make them noticeable lightweight.
+
+4) Sharing: you can use a remote repository to share you container with others. And it is also possible to configure your own private repository.
+
+5) Lightweight footprint and minimal overhead: Docker images are typically very small, allowing for more effecient use of computer resources, both in terms of energy consumption and cost effectiveness.
+
+6) Simplified maintanance: Docker reduces effort and risk of problems with application dependencies. 
+Multiple containerized apps on a single server don't mess up each other.
+If you update an app, you just build a new image, run fresh container and don't have to worry about other ones on the machine breaking
+
+
+Ticket:
+  Containerise the java based application in the SCM repository below;  
+ https://github.com/Solavisetech-Team/maven-web-app.git 
+
+
+Content:
+  source code      = src/main/app.java    
+  JUNitTestCases   = src/test/appTest.java  
+  build script     = pom.xml 
+
+  Dockerfile : Dockerfile is a simple file which contains instructions needed to create/build a docker image
+
+  A Dockerfile contains specific keywords use to build images by the docker daemon
+
+  e.g
+    Dockerfile:
+    FROM tomcat:8.0.20-jre8
+    COPY target/*.war /usr/local/tomcat/webapps/tesla.war 
+
+ https://github.com/Solavisetech-Team/maven-web-app
+
+
+Dockerfiles:
+============ 
+Dockerfiles are input use to build docker images    
+Docker images are input needed/used to create containerised applications  
+
+1#
+FROM tomcat:8.0.20-jre8
+COPY target/*war /usr/local/tomcat/webapps/tesla.war
+
+2#
+FROM tomcat:8.0.20-jre8  
+COPY target/app.ear /usr/local/tomcat/webapps/app.war 
+
+3#
+FROM jboss/wildfly:latest  
+ADD target/*.war /opt/jboss/wildfly/standalone/deployments/
+
+            "ExposedPorts": {
+                "8080/tcp": {}
+
+DockerImage: --> It's package which contains application code 
+        + all it's dependencies(Software+ENV Varibles + Config Files) 
+        together.
+java-based projects:
+
+  curl -v localhost:6000/maven-web-app 
+  curl -v 44.211.75.85:6000/maven-web-app 
+
+Dockerfile keywords:
+===================
+FROM
+MAINTAINER
+COPY
+ADD
+RUN
+CMD
+ENTRYPOINT
+WORKDIR
+ENV
+EXPOSE
+USER
+VOLUME
+LABEL
+ARG
+
+Base image generally contains Libraries and dependencies  :
+    java-standalone applications
+FROM  openjdk11
+
+   java-web applications
+FROM  tomcat:9.0.7-openjdk11 
+FROM  jboss/wildfly
+  
+  docker pull tomcat:9.0.71-jdk17-corretto-al2
+
+FROM --> FROM indicates the  base image(Layers) such as OS(Libraries)
+ like centos,alpine,ubuntu or any programatic language(java,python,node,go) 
+ or some other sofwares like tomcat,nginx,mysql..etc. Using base image 
+ we can create our own image. All sub subsequent instructions(Layers) 
+ will be executed/created on top of base image
+layers.
+
+
+Syntax: 
+FROM  <ImageName>
+Ex:
+FROM tomcat:8.0.20-jre8
+FROM openjdk:8-alpine
+FROM nginx
+FROM node
+FROM python
+
+MAINTAINER --> It's will be used as comments to describe 
+author/owner who is maintaning the docker file.
+This instruction allows you to set the Author/Owner of the Image.
+
+MAINTAINER <name>
+MAINTAINER <Solavisetech-Team ndecalamba@gmail.com>
+MAINTAINER <Docker Community>
+
+COPY  --> Using COPY we can copy files/folders to the image. 
+Files/Folders will be copied to the image while building an image.
+Using COPY instruction we can COPY local(build context) files or directories(folders) to the image while building image.
+
+COPY target/*.war /usr/local/tomcat/webapps/ 
+COPY . . 
+
+SYTNAX:
+======
+COPY <source>                <destination> 
+      ServerFile/FolderPath   PathInsideImage
+
+ADD -->
+     ADD also can copy files to the image while creating image. 
+     ADD can copy local files from host server(build context) 
+     and also  can download files from remote HTTP/S locations 
+     while creating a image.
+
+  https://8.25.3.9:8081/repo/maven-web-app/maven-web-app.war  
+
+ADD https://8.25.3.9:8081/repo/maven-web-app/maven-web-app.war /usr/local/tomcat/  
+
+FROM ubuntu
+ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz /opt/
+
+
+RUN, CMD, ENTRYPOINT:  instructions can be used to execute commands/scripts.
+These RUN,CMD,ENTRYPOINT can be defined in 2 forms.
+
+1) -#Shell Form
+
+RUN <command> <arg1> <arg2>
+     mkdir /opt/class  
+CMD <command> <arg1> <arg2>
+      catalina.sh  start  
+ENTRYPOINT <commond> <arg1> <arg2>
+      /bin/bash -c catalina.sh  start 
+     /bin/bash -c catalina run 
+
+2) -#Executable Form
+
+RUN ["command/executable" , "arg1","arg2"]
+    ["mkdir" , "/opt/glorious batch"]
+
+CMD ["command/executable" , "arg1","arg2"]
+    ["catalina" , "run"]
+
+ENTRYPOINT ["commond/executable" , "arg1","arg2"]
+           ["catalina" , "run"]
+
+RUN --> RUN instruction will  execute commands/scripts.
+        RUN commands or instructions will be executed while creating an image on top of the previous layers(Image). 
+        Next to run, you can mention any command based on base os of image.
+        We can have number of RUN instructions in a docker file 
+        all the RUN instructions will be exectued one after the other from top to bottom.
+
+   Dockerfile_CMD: 
+  FROM tomcat:9.0.71-jdk8-corretto-al2
+  ADD target/tesla.war  /usr/local/tomcat/   
+  CMD sh catalina.sh run 
+  CMD ["catalina.sh", "run"]
+
+ Dockerfile_RUN: 
+FROM ubuntu
+RUN mkdir /opt/glotious-batch
+RUN touch /opt/glotious-batch/jobs
+ADD . /opt/glotious-batch
+CMD pwd  
+CMD ["echo", "I am rich"]
+
+docker build -t image2 -f Dockerfile_CMD . 
+
+
+
+What is difference b/w RUN & CMD?
+
+RUN instructions will be executed while creating a image. 
+CMD Instructions will be executed while creating a container.
+We can have more than one RUN keyword in a docker file.
+All the RUN keywords will be processed while creating an image in the defined order(top to bottom).
+
+Can we have more than one CMD in dockerfile?
+Yes you can have. But only the last one/recent one in the order will be proccessed 
+while creating a container.
+
+
+
+ENTRYPOINT --> ENTRYPOINT configures a container that will run as an executable.
+           ENTRYPOINT is a command or script that is executed when you run the docker container.
+
+
+Dockerfile_EP:  
+FROM ubuntu
+RUN mkdir /opt/class30
+RUN touch /opt/class30/jobs
+ADD . /opt/class30  
+ENTRYPOINT ["echo", "I am rich from ENTRYPOINT"]
+
+How is ENTRYPOINT different from CMD?
+1. Both are command instructions executed while creating a container 
+2. ENTRYPOINT can't be over riden while we can over ride CMD 
+
+ENV --> ENV instruction sets the environment variable and this sets the environment for the subsequent build instructions. It takes two forms: one with a single variableENV <key> <value> and another with multiple variables ENV <key> =<avlue> <key> = <value>.
+
+
+
+ARG -> ARG Instruction defines a variable that can be passed at build time. Once it is defined in the Dockerfile you can pass with this flag --build-arg while building the image. We can have multiple ARG instruction in the Dockerfile. ARG is the only instruction that can precede the FROM instruction in the Dockerfile.
+
+ARG values are not available after the image is built. A running container won’t have access to an ARG variable value
+
+
+EX:
+
+ARG TAG=latest
+FROM centos:$TAG
+docker build -t <image-name>:<tag> --build-arg TAG=centos8 .
+
+
+WORKDIR --> WORKDIR  is used to define the working directory of a Docker container at any given time. The command is specified in the Dockerfile.It is optional (default is / , but base image might have set it), but considered a good practice. Subsequent instructions in the Dockerfile, such as RUN , CMD and ENTRYPOINT will operate in this dir.
+
+Ex:
+
+WORKDIR /app
+
+
+LABEL
+
+The LABEL instruction adds metadata to an image. A LABEL is a key-value pair. To include spaces within a LABEL value, use quotes and backslashes as you would in command-line parsing. A few usage examples:
+
+
+LABEL branch=develop
+
+LABEL description="This text illustrates"
+
+
+
+
+
+
+
+
+======================================================================================================================================================================================================
+
+
+
+
+
+
+
+
+DOCKER REGISTRY AND DOCKER COMMANDS
+===================================
+
+To push images to the dockerHub
+-------------------------------
+
+docker tag local <image> <reponame>
+docker push <image:tag>
+
+For you to images to the image registry, you must be authenticated
+
+     docker login
+
+     username
+     passwd
+
+To pull images from the image registry:
+
+     docker pull solavisetech/maven-web-app 
+
+
+aws ecr private docker registry:
+===============================
+Retrieve an authentication token and authenticate your Docker client to your registry.
+Use the AWS CLI:
+
+sudo apt install awscli -y   --- install aws CLI
+
+* Create AWS Access and Secret Access keys
+
+aws configure   --- to configure docker authentication with aws
+
+When you run, aws configure; enter the following info:
+
+    AWS accesss key ID [None]: = AWS access key
+    AWS Secret Access Key [None]: AWS secret access key
+    Default region name [None]: Aws resoure region
+    Default output format [None]: json
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 287784533479.dkr.ecr.us-east-1.amazonaws.com
+
+docker build -t web-app .
+
+docker tag web-app:latest 287784533479.dkr.ecr.us-east-1.amazonaws.com/web-app:latest
+
+docker tag teslaimage:jb2 287784533479.dkr.ecr.us-east-1.amazonaws.com/web-app:1
+
+
+docker push 287784533479.dkr.ecr.us-east-1.amazonaws.com/web-app:1
+
+
+aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/v5s8z0t3
+
+docker tag teslaimage:jb2 public.ecr.aws/v5s8z0t3/web-apps:1  
+docker push public.ecr.aws/v5s8z0t3/web-apps:latest
+docker push public.ecr.aws/v5s8z0t3/web-apps:1   
+
+docker pull public.ecr.aws/v5s8z0t3/web-apps:1
+
+
+
+Dockerfile Best practices:
+==========================
+1. We should use executable over shell form for CMDs and ENTRYPOINTs instructions 
+2. Reduce the number of RUN instructions as much as possible. 
+   This will reduce the number of Layers and keep our images light weight.  
+3. Use Official/Trusted docker base images in your Dockerfile 
+    FROM ubuntu/tomcat 
+4. Use light weight alpine linux where ever possible
+   https://hub.docker.com/_/alpine
+   ubuntu/centos/alpine   
+5. scan images before usage 
+     docker scan imageID/Name 
+
+6) Don't install/have unnecassary packages(Softwares) & Don't
+   copy unnecassary files & Folders .
+
+7) Don't run container process as root user. Start container
+   process(Application) as non root user. 
+
+8) Try to Scan images for vulnerabilites(Clair ,Anchor or Trivy or Inbuilt Scaning in ECR/GCR/ACR).
+
+9) Try to use multi Stage Docker files to reduce size of the image where ever it's applicable 
+https://github.com/Solavisetech-Team/Dockerfiles
+
+10. Keywords should be in uppercase to distinguish it from arguments 
+
+multi Stage Docker files:
+1. Clone  
+2. Build  
+3. DeployAsContainer 
+
+FROM ubuntu:git 
+WORDIR /home/ubuntu/
+RUN clone https://git/repo/webapps \ 
+    && cd  webapps
+    && mvn install 
+FROM tomcat:71-jdk8-corretto-al2   
+
+
+#git
+FROM alpine/git as repo
+MAINTAINER ndecalamba@gmail.com
+WORKDIR /app
+RUN git clone https://github.com/Solavisetech-Team/maven-web-application
+
+#Maven
+FROM maven:3.5-jdk-8-alpine as build
+WORKDIR /app
+COPY --from=repo /app/maven-web-application  /app
+RUN mvn install
+
+#Tomcat
+FROM tomcat:8.0.20-jre8
+#COPY  /app/target/*war /usr/local/tomcat/webapps/maven-web-app.war
+COPY --from=build /app/target/*war /usr/local/tomcat/webapps/
+
+
+
+FROM ubuntu:latest
+RUN apt-get -y update && apt-get -y upgrade \
+RUN apt-get -y install openjdk-8-jdk wget
+RUN mkdir /usr/local/tomcat
+RUN wget http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.46/bin/apache-tomcat-8.5.46.tar.gz -O /tmp/tomcat.tar.gz
+RUN cd /tmp && tar xvfz tomcat.tar.gz \
+    && cp -Rv /tmp/apache-tomcat-8.5.46/* /usr/local/tomcat/
+EXPOSE 8080
+CMD /usr/local/tomcat/bin/catalina.sh run
+          
+
+
+Docker images commands:
+-----------------------
+  docker build  
+  docker tag 
+  docker images
+  docker pull  
+  docker push  
+
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+
+Docker images commands:
+-----------------------
+  docker build    = create a docker image from a Dockerfile  
+  docker tag      = assigns repository name to images 
+  docker images   = list images
+  docker image ls = list images
+  docker images -q = list image ids ONLY 
+
+  docker rmi imageName/imageID       = DELETE AN IMAGE   
+  docker rmi -f solavisetech/hello = FORCE DELETE AN IMAGE  
+  docker rmi -f solavisetech/hello  
+  docker rmi -f  
+
+ubuntu@docker:~$ docker rmi -f $(docker images -q)
+                 DELETE ALL IMAGES 
+
+  docker rmi -f  13e31c5e87ff 6da8acdc7fc9 e88a065848be
+    deletes selected images     
+
+ubuntu@docker:~/web/tesla$ cat Dockerfile
+FROM tomcat:8.0.20-jre8
+COPY target/*.war /usr/local/tomcat/webapps/tesla.war
+
+1. docker build -t teslaimage:1 . 
+       where "." = pwd
+       build is from the default Dockerfile name = Dockerfile 
+   docker build -t teslaimage:1 /home/ubuntu/web  
+   docker build -t teslaimage:1 -f Dockerfile_TESLA /home/ubuntu/web 
+
+ docker build -t teslaimage:jb2 -f Dockerfile_JBOSS .  
+
+
+docker push solavisetech/maven-web-app:tagname
+docker push solavisetech/maven-web-app      
+
+docker tag teslaimage:jb2 soalvisetech/maven-web-app    
+docker tag teslaimage:1 soalvisetech/maven-web-app
+docker push solavisetech/maven-web-app
+
+docker login -u info@solavisetech.com
+docker login -u username/EMAIL -p password   
+docker push solavisetech/maven-web-app:jb1 
+
+Pull images from Public registry [dockerhub] : 
+    No athentication is required
+
+Pull images from private registry [ecr/dockerhub/nexus/JFrog] :
+    Authentication is required   
+    docker login -u username -p password 
+
+push images to Public registry [dockerhub] :
+      Authentication is required   
+      docker login -u username -p password 
+
+push images to private registry [dockerhub] :
+      Authentication is required   
+      docker login -u username -p password 
+
+
+delete all images using: docker rmi -f $(docker images -q) 
+==========================================================
+docker images -q  = List image IDs  
+docker rmi $( docker images -q )   
+docker rmi -f $(docker images -q)  
+
+docker build/pull/scan/push/inspect/rmi/prune/tag  
+
+
+docker build/ps/images     
+
+docker container commands:
+============================
+docker ps    = List running containers  
+docker ps -a = List all containers [running and stopped/excited] 
+docker ps -q   = List running containers IDs
+docker ps -aq  = List all containers IDs 
+docker stop containerName/ID  
+docker stop
+
+List Running Containers
+=======================
+docker ps -a --filter  status="running" 
+docker ps 
+docker container ls
+
+List All Containers
+==================
+docker ps -a
+docker container ls -a
+
+List ONLY stopped Containers
+=================================
+docker ps -aq --filter  status="exited" 
+docker ps -a --filter  status="exited" 
+
+List only running container ids
+==============================
+docker ps -q
+docker container ls -q
+
+
+List all container ids
+==============================
+docker ps -aq
+docker container ls -aq
+
+
+deletes stopped containers 
+===========================
+docker rm containerName/ID  
+docker rm $(docker ps -aq --filter status='exited' ) 
+
+Force Delete a running container  
+===============-----------------
+docker rm -f containerName/ID 
+ docker rm -f $(docker ps -aq --filter  status="running") 
+
+Delete an exited/stopped container  
+===============-----------------
+docker rm containerName/ID  
+
+Delete all exited/stopped container
+====================================  
+docker rm $(docker ps -aq --filter status='exited' )
+
+Delete all  container
+====================================  
+docker rm -f $(docker ps -aq )
+
+
+Delete all excited/stopped Containers
+================================
+docker rm $(docker ps -aq --filter  status="exited")
+
+
+For info about the docker image and container commands, run the below commands
+------------------------------------------------------------------------------
+docker images --help   
+docker containers --help 
+
+Ticket:
+  Deploy an application from the Solavisetech-Team/java-web-app image.
+Method1:  
+1. docker pull solavisetech/java-web-app
+2. docker scan soalvisetech/java-web-app  
+3. docker run --name webapp -d -p 8000:8080  solavisetech/java-web-app  
+
+Method2:
+1. docker pull solavisetech/java-web-app
+2. docker scan solavisetech/java-web-app  
+3. docker create --name webapp -d -p 8000:8080  solavisetech/java-web-app 
+4. docker start  webapp 
+
+
+Ticket02 -  :
+1. https://github.com/Solavisetech-Team/python-flask-app
+  Deploy a pythonapp application using docker: 
+    1. use/Create/modify a Dockerfile   
+    2. Use the Dockerfile to build a docker image  
+    3. Push the image to an image registry[dockerhub/ecr/nexus/JFrog]
+    4. pull, inspect and scan the docker image
+    5. deploy the application using the image [docker run]
+
+
+Ticket03
+========
+https://github.com/Solavisetech-Team/nodejs-application.git
+  Deploy a nodeJS web application using docker: 
+    1. use/Create/modify the Dockerfile   
+    2. Use the Dockerfile to build a docker image  
+    3. Push the image to an image registry[dockerhub/ecr/nexus/JFrog]
+    4. pull, inspect and scan the docker image
+    5. deploy applications using the image 
+
+ RestFulAPIs
+ ===========
+
+   app.get('/solavisetech
+   app.get("/html
+   app.get("/jsonData 
+
+
+   PIPELINE TEMPLATES DEVELOPMENT
+------------------------------
+
+node{
+   def mavenHome = tool name: 'maven3.9.6'
+  stage('cloning latest version of the code'){
+      sh "checkout"
+      git "url"
+  }
+  stage('building code '){
+      sh "maven build"
+      sh "{$mavenHome}/bin/ mvn package"
+  }
+  stage('CodeQ'){
+      sh "codeA"
+      sh "{$mavenHome}/bin/ mvn sonar:sonar"
+  }
+  stage('ArtifactsUpload'){
+      sh "upload"
+      sh "{$mavenHome}/bin/ mvn deploy"
+  }
+  stage('deply2UAT'){}
+  stage('deploy2prod'){}
+  stage('monitoring'){}
+  stage('Notification'){}
+}
+
+
+
+pipeline{
+  agent any{}
+  tools{
+      maven 'maven3.9.6'
+  }
+  triggers{
+      webhook
+  }
+  options{
+      * * * *
+  }
+  stages{
+     stage{
+        steps{
+          sh "clone"
+          git "url"
+        }
+     }
+     stage{
+        steps{
+          sh "build"
+          sh "mvn package"
+        }
+     }
+     stage{
+        steps{
+          sh "codeA"
+          sh "mvn sonar:sonar"
+        }
+     }
+  }
+}
+
+
+
+
+
+  
+
+
+
+======================================================================================================================================================================================================
+
+
+
+
+
+
+How to troubleshoot or debug applications running as docker containers
+======================================================================
+
+docker create --help'
+Ticket02 -  :
+1. https://github.com/Solavisetech-Team/python-flask-app
+  Deploy a pythonapp application using docker: 
+    1. use/Create/modify a Dockerfile   
+    2. Use the Dockerfile to build a docker image  
+    3. Push the image to an image registry[dockerhub/ecr/nexus/JFrog]
+    4. pull, inspect and scan the docker image
+    5. deploy the application using the image [docker run]
+
+Ticket03
+========
+ https://github.com/Solavisetech-Team/nodejs-application.git
+  Deploy a nodeJS web application using docker: 
+    1. use/Create/modify the Dockerfile   
+    2. Use the Dockerfile to build a docker image  
+    3. Push the image to an image registry[dockerhub/ecr/nexus/JFrog]
+    4. pull, inspect and scan the docker image
+    5. deploy applications using the image 
+
+ RestFulAPIs
+ ===========
+
+RESTful API is an application programming interface (API) 
+that uses HTTP requests to GET, PUT, POST, and DELETE data
+
+ httpPostRequests:   
+ httpDeleteRequests:
+ httpPutRequests:
+
+   app.get('/solavisetech
+   app.get("/html
+   app.get("/jsonData
+
+https Errors and httpsError codes:
+  httpStatus codes:
+---------------------------------
+
+  400 errors = client side errors  
+  401 = not authorised  
+  402 = permission denied
+  403 = forbidden
+  404 = not found 
+  500 errors = server side errors  
+  501 / 502 / 503 =  
+  200 = ok  
+  300 = redirect 
+     
+
+
+Monitoring dashboards :  
+
+In tomcat applications are deployed in heavy weight virtual machines VMs:
+In docker applications are deployed in lightweight containers:
+================================================================= 
+
+How to resolves issues occuring in a docker container??
+How to troubleshoot or debug applications running as docker containers? :
+
+1. docker ps -a 
+     This will check if the container is running, paused or stopped/exited
+     if stopped you should restart to resolve the issue  
+     if paused you should unpause to resolve the issue  
+     docker unpause; docker start 
+
+2. docker inspect containerNAME/ID = List information about the container
+  
+
+3. docker logs containerNAME/ID = Check the status of a container 
+
+
+4. docker top containerNAME/ID = check resources/processes  
+
+5. docker stats containerNAME/ID = = check resources 
+      "OOMKilled": false,  
+
+6. docker exec  = run commands inside the container 
+   docker exec webapp ls logs       
+
+7. access in interactive mode 
+   docker exec -it containerNAME/ID bash    
+   docker exec -it webapp bash 
+   curl 3.22.217.29:8080/maven-web-app    
+  
+
+copy from a container:
+  docker cp webapp:/usr/local/tomcat/webapps/tesla/jsps/home.jsp .
+  docker cp webapp:/usr/local/tomcat/webapps . 
+copy file to a container:
+docker cp home.jsp webapp:/usr/local/tomcat/webapps/tesla/jsps/ 
+
+docker cp = copy files from a container and to a container
+  docker cp 
+
+What is docker commit?
+Using docker commit we can create image from a continer.
+docker commit <containerId/Name> <imageName>
+docker commit webapp newimage:1 
+
+ docker commit webapp solavisetech/maven-web-app  
+
+
+Can we set CPU,RAM limit for the containers while creating?
+Yes We set using options while creating a container.
+docker run -d --name app -p 8000:8080 solavisetech/maven-web-app
+docker diff contianerName/ID   
+
+docker commit app image2  
+
+
+docker container commands:
+  docker run/create/start/stop/kill/inspect/logs/top/stats/
+  docker diff/update/cp/commit/pause/unpause/ps/ps-a/exec
+  docker rm/rm-f/ps -q/   
+
+docker images commands:
+  docker build/login/push/pull/tag/images/images prune/  
+  docker rmi/rmi -f/system prune 
+
+docker image --help   
+docker container --help 
+
+
+Monolithic Appliactions vs Microservices Architecture
+=====================================================
+
+Monolithic Architecture
+-----------------------
+
+Monolithic applications has single code with mutple modules.
+Modules are divided as either for business features or technical features,
+It has a single build system which build entire application
+and/or sependency. It also has single executable or deployable binary.
+
+Microservices Architechture
+---------------------------
+
+Microservices are a sofeware development technique that arranges an application as a collection of loosely coupled services. Which can be developed, deployed, and maintained independently. Each of these services is responsible for discrete task and can communicate with other services through simple APIs to solve a larger complex business problem.  
+
+THE PROS AND CONS OF A MONOLITHIC APPLICATION
+---------------------------------------------
+
+PROS
+----
+- Simple to develop
+- Simple to deploy single package(war/jar/ear)
+- Easy to debug & Error tracing
+- Simple to test
+
+Cons
+----
+- Difficult to understand and modify
+- Tighly coupled
+- Redeploy entire app on each update.
+- Single bug can bring down entire application
+- Scaling the application is difficult. If we need to scale only few features/modules will end up scaling entire app as its single package
+- Change on one section(module/features of code can cause impact on the other section of the code as it's a single code base)
+
+
+Micro Services
+--------------
+
+Pros
+----
+- Loosely coupled
+- Easy to understand & modify as it's small code base
+- Better deployments as each service(feature/module) can be deployed independently.
+- Each service can be scaled independentlt as each service
+
+cons
+----
+- Communication between services is complex: since everything is now an independent service, you have to carefuly handle requests traveling between your modules/services using Rest API's
+- Integration testing is difficult: Testing a micriservices-based application can be cumbersome.In a monolithic approach, we would just need to launch our WAR on an application server and ensure its connectivity with the underlying database. With microservices, eaxch dependent service needs to be deployed before testing can occur.
+
+
+
+
+
+
+
+=====================================================================================================================================================================================================
+
+
+ 
+
+
+
+Docker network and Docker volumes
+=================================
+
+What is a network ?
+Group of servers/devices connected to each other in a specific network. If Servers
+are in same network each one can talk to another server.
+
+Docker network
+=============
+If One Container has to talk to another Container, they do that: 
+Using ContainerIP/Name(DNS) in Docker.
+Both has to be created under same docker network.
+
+If Containers are in two different networks. 
+They can't access each other.
+
+How to list networks in docker?
+
+ubuntu@docker:~$ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+7403f6b74f30   bridge    bridge    local
+f9f9a99c2c85   host      host      local
+0f1d053a3f91   none      null      local
+
+Default bridge network 
+
+custom bridge network
+host network
+none network
+
+docker network create tesla
+docker network create -d bridge ebay
+
+ebay webapp: monolithic architecture 
+   login/registration/cart/pay/order/return  
+
+microservices architecture:
+ ebay.war  = decoupled   
+   login.jar
+   registration.jar
+   cart.jar
+   pay.jar
+   order.jar
+   return.jar  
+
+easy to manage/
+  monolithic = ebay / 20,000 lines of code 
+
+  microservices architecture:
+   login 2,000 lines of code 
+   registration 4,000 lines of code 
+   cart 2,000 lines of code 
+   pay 6,000 lines of code 
+   order 2,000 lines of code 
+   return 8,000 lines of code   
+easy to  scale  :
+    login=20m - 28m /
+    reg=20 /
+    cart=8m /
+    pay=7m/
+    order=7m /
+    returns=1m ] 
+
+better/efficient resource usage : 
+
+versioning is easier to manage with microservices
+
+In our environment, we  support Java based applications
+
+NodeJS, python and .net based applications:
+
+Ticket024:
+  Deploy a microservice application for tesla.  
+  *- GitHub repository
+    https://github.com/Solavise-Team/spring-boot-docker
+  - dockerHub repository
+    solavisetech/sping-boot-mongo
+
+spring:
+  data:
+    mongodb:
+      host: ${MONGO_DB_HOSTNAME}
+      port: 27017
+      username: ${MONGO_DB_USERNAME}
+      password: ${MONGO_DB_PASSWORD}
+      database: users
+      authentication-database: admin
+server:
+  port: 8080
+spring:
+  data:
+    mongodb:
+      host: dbserver
+      port: 27017
+      username: devdb
+      password: devdb123
+      database: users
+      authentication-database: admin
+
+we need to deploy the springapp and the database - mongo
+    
+  docker pull solavisetech/sping-boot-mongo
+  docker pull mongo
+  docker network create tesla    
+
+  
+docker run --name mongodb --network tesla -e MONGO_INITDB_ROOT_USERNAME=devdb -e MONGO_INITDB_ROOT_PASSWORD=devdb@123 mongo  
+
+docker run --name springapp -d -p 8080:8080 --network tesla -e MONGO_DB_HOSTNAME=mongodb -e MONGO_DB_USERNAME=devdb -e MONGO_DB_PASSWORD=devdb@123 solavisetech/spring-boot-mongo
+
+ database:  HOSTNAME      USERNAME       PASSWORD   network  
+            mongodb       devdb          devdb@123   tesla    
+1.spingapp: mongodb       devdb          devdb@123   tesla  
+
+
+ Variables defined by our developers
+ -----------------------------------     
+      host: ${MONGO_DB_HOSTNAME}
+      port: 27017
+      username: ${MONGO_DB_USERNAME}
+      password: ${MONGO_DB_PASSWORD}
+
+
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+
+docker run --name mongodb --network tesla -e MONGO_INITDB_ROOT_USERNAME=devdb -e MONGO_INITDB_ROOT_PASSWORD=devdb@123 -v /tmp/mydata:/data/db mongo 
+
+docker run --name app -d -p 8000:8080 --network tesla solavisetech/java-web-app 
+docker run --name webapp -d -p 7000:8080 solavisetech/maven-web-app 
+
+
+Bash shell script
+-----------------
+
+#!/bin/bash
+# ubuntu 18.04
+#sudo apt update -y
+#sudo apt install docker.io -y
+#sudo usermod -aG docker ubuntu
+sudo docker network create -d bridge mynw
+sudo docker run -d -p 8000:8080 --name springapp  -e MONGO_DB_HOSTNAME=mongo -e MONGO_DB_USERNAME=devdb -e MONGO_DB_PASSWORD=devdb1234 --network mynw  solavisetech/spring-boot-mongo 
+sudo docker run -d --name mongo -e MONGO_INITDB_ROOT_USERNAME=devdb -e MONGO_INITDB_ROOT_PASSWORD=devdb1234  --network mynw mongo
+
+
+docker network COMMAND
+======================
+
+Manage networks
+---------------
+
+Commands:
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
+
+ docker network connect tesla webapp   
+
+docker run --name app -d -p 8000:8080 solavisetech/java-web-app 
+
+docker network create/inspect/ls/disconnect/connect/rm/prune:
+============================================================
+
+To Remove unused networks
+-------------------------
+docker network prune 
+
+To Remove Network
+-----------------
+docker network rm <networkNameOrId>
+
+Docker Host Network.:
+=====================
+If we create containers in host network. 
+Container will not have IP Address.
+ Container will be created in a system network.
+
+docker run --name webapp -d -p 7000:8080 solavisetech/maven-web-app 
+
+docker run --name javaapp -d --network host solavisetech/java-web-app
+   ContainerPort: 8080 
+
+docker run --name apps -d --network host solavisetech/java-web-app
+   ContainerPort: 8080 
+
+docker run --name hello -d --network host solavisetech/hello  
+  ContainerPort: 80
+
+
+
+ContainerPort: 8080    
+
+We can't create more than one container with same container port in host network. 
+   java-web-app      = containerPort,  EXPOSE=8080  
+   maven-web-app     = containerPort,  EXPOSE=8080  
+
+Docker none/null network
+========================
+If we create container in none/null network. Container will not have IP Address.
+We can't access  containers in this network                       
+Internal or external 
+
+docker run --name hello -d -p 80:80 --network none solavisetech/hello   
+
+Isolation   
+  docker disconnect hello ebay  
+  docker connect hello none  
+
+docker volumes and docker compose:
+==================================
+Docker:
+  We use Docker for containerization
+  We use Kubernetes for container orchestration/MGT   
+
+We install the docker containerization software:
+In Linux/Windows/MacOS  
+  docker client /cli    = docker build/push/pull/run  
+  docker daemon/service =  
+  docker registry       = ship/share[dockerhub/ecr/nexus]    
+
+Application architecture:
+  Monolithic architecture '
+  Micro-services architecture '
+
+Which kind of applications can be containerised??  
+  - All applications [java/python/nodeJS/nginx, etc.]
+
+What is needed to containerise an application :
+  docker installed
+  Dockerfile -- Instructions on how to build an image   
+  Docker Image -- is a package with apps code + dependencies
+
+  containers -- apps or running instance/process of a docker image 
+  networks--- communication[internal or external]  
+
+  docker run --network none --name webapp solavisetech/hello 
+  docker run --network host --name webapp solavisetech/hello
+  docker run --network ebay --name webapp solavisetech/hello 
+  docker run --name webapp solavisetech/hello
+
+
+Types of networks that we have seen:
+------------------------------------
+ docker networks:
+  Default bridge
+  custom bridge
+  non  
+  host  
+
+docker:
+  image      = packaging 
+  containers = process of the image 
+  networks   = communication
+  volumes    = storage/mounts for the containers
+
+===================================================================================================================================================================
+
+
+
+
+docker Volumes
+============== 
+
+Bind Mounts:
+Bind mounts may stored data anywhere on the host system. 
+They may even be important system files or directories. 
+
+docker run --name mongo -d --network tesla -v /tmp/mongo:/data/db -e MONGO_INITDB_ROOT_PASSWORD=devdb@123 -e MONGO_INITDB_ROOT_USERNAME=devdb mongo
+
+docker run --name springapp -d -p 8080:8080 --network tesla -e MONGO_DB_HOSTNAME=mongo -e MONGO_DB_USERNAME=devdb -e MONGO_DB_PASSWORD=devdb@123  solavisetech/spring-boot-mongo
+
+
+docker run --name mongo -d --network tesla \
+  -v /tmp/mongo:/data/db \
+  -e MONGO_INITDB_ROOT_PASSWORD=dev@123 \
+  -e MONGO_INITDB_ROOT_USERNAME=devdb mongo 
+
+Non-Docker processes on the Docker host can modify 
+Bind Mounts volumes at any time unnoticed.
+
+
+Docker Volumes
+Volumes stored data in a part of the host filesystem managed by docker
+
+DHD = /var/lib/docker
+
+BindMount:
+  /tmp/mongo:/data/db
+  /home/ubuntu/data:/data/db
+
+Docker Peristent Volumes(Docker Named Volumes)
+=============================================
+docker volume create mongodata
+docker volume create mongodata -d local
+docker volume create mongo33   
+docker volume create -d local data 
+docker volume ls
+
+/my/own/datadir:/data/db 
+
+docker run --name mongo -d --network tesla \
+  -v mongodata:/data/db \
+  -e MONGO_INITDB_ROOT_PASSWORD=dev@123 \
+  -e MONGO_INITDB_ROOT_USERNAME=devdb mongo 
+
+
+Mountpoint": "/var/lib/docker/volumes/data33/_data  
+
+docker volume rm volumeName  
+docker volume rm data33  
+
+Volumes are the best way to persist data in Docker.:
+
+
+-v = Volume mapping
+-e = Pass environmental variables
+-d = Run the container in detatchable mode
+-p = Port mapping
+-it = Run the cintainer in interactive mode
+--name = Assign a name to the conatiner
+--network = Define a network for the container 
+--volume = Define a volume for the container 
+
+External volumes:
+ ===== Network Volumes Using AWS EBS ==========
+ 
+https://rexray.readthedocs.io/en/v0.8.2/user-guide/docker-plugins/
+Rexray docker-plugins for storage:
+
+IAM = Authorisation  
+
+docker plugin install rexray/ebs \
+  EBS_ACCESSKEY= # edit with yours
+  EBS_SECRETKEY= # edit with yours
+
+docker volume create -d rexray/ebs ebs33 
+docker volume create ebs33
+docker volume create -d local ebs33  
+
+docker run --name mongo -d --network tesla \
+  -v ebs33:/data/db \
+  -e MONGO_INITDB_ROOT_PASSWORD=devdb@123 \
+  -e MONGO_INITDB_ROOT_USERNAME=devdb mongo 
+
+Docker Compose
+==============
+Docker Compose is a tool for defining/declaring and running multiple 
+   containerised micro-services applications.
+In real time one application can have more than 7 micro-services:
+
+docker-compose must be installed in order to run docker compose file.
+
+Install docker-compose
+----------------------
+
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+
+
+     sudo yum install docker-compose -y
+     sudo apt install docker-compose -y
+
+ebay.com: 
+An e-commerce java based web application for ebay or 
+ebay-web-application:
+    Login
+    Registration
+    cart
+    checkout
+    Payment
+    Order
+    mysql db  
+
+docker run --name login -d -p 80:8080 --network ebay login 
+docker run --name reg -d --network ebay registration 
+docker run --name cart -d -p 80:8080 --network ebay cart
+docker run --name checkout -d -p 80:8080 --network ebay checkout
+docker run --name pay -d -p 80:8080 --network ebay payment 
+docker run --name order -d -p 80:8080 --network ebay order 
+
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=admnin123 -d \
+--network ebay mysql
+
+docker objects: what is required for a service to be created
+  - images 
+  - networks 
+  - volumes 
+  - environmental variables 
+
+ubuntu@docker:~$ docker-compose
+Command 'docker-compose' not found, but can be installed with:
+sudo snap install docker          # version 20.10.24, or
+sudo snap install docker          # version 20.10.24
+sudo apt  install docker-compose  # version 1.29.2-1
+See 'snap info <snapname>' for additional versions.
+
+docker --version
+Docker version 24.0.7
+
+
+docker-compose.yml  
+------------------
+
+version: '3.1'  
+services:  
+  mongodb:  
+    image: mongo  
+    restart: always  
+    networks:  
+      - ecommerce  
+      - fintech  
+    volumes:  
+      - mongo-data:/data/db  
+    environment:  
+      - MONGO_INITDB_ROOT_USERNAME=proddb  
+      - MONGO_INITDB_ROOT_PASSWORD=proddb@123  
+
+  springapp:  
+    image: solavisetech/spring-boot-mongo  
+    restart: always  
+    networks:  
+      - ecommerce  
+      - tesla  
+    ports:  
+      - 7000:8080  
+    environment:  
+      - MONGO_DB_HOSTNAME=mongodb  
+      - MONGO_DB_USERNAME=proddb  
+      - MONGO_DB_PASSWORD=proddb@123  
+    depends_on:  
+      - mongodb    
+
+volumes:  
+  mongo-data:  
+    driver: local  
+  ebs-data:  
+    driver: rexray/ebs  
+
+networks:  
+  ecommerce:  
+    driver: bridge  
+  tesla:  
+    external: true
+
+
+docker volume create -d rexray/ebs data11    
+docker network create tesla  
+
+docker run --name mongo -d --network tesla \
+-v ebs3:/data/db -e MONGO_INITDB_ROOT_PASSWORD=devdb@123 \
+-e MONGO_INITDB_ROOT_USERNAME=devdb mongo
+
+docker run --name springapp -d -p 8080:8080 --network tesla \
+-e MONGO_DB_HOSTNAME=mongo -e MONGO_DB_USERNAME=devdb \
+-e MONGO_DB_PASSWORD=devdb@123  solavisetech/sping-boot-mongo
+
+
+             dev     uat      prod   
+USERNAME   devdb     uatdb    proddb   
+hostname   mongo     mymongo  mongodb  
+password   dev@123   uat@123  admib@#123  
+
+docker compose file with default name [docker-compose.yml ].
+
+  To Create Services/Contianers
+  ----------------------------
+
+   docker-compose up -d  
+  
+  To Remove Services/Contianers
+  -----------------------------
+
+    docker-compose down
+  
+docker compose file with custom name.
+-------------------------------------
+
+docker-compose -f <CustomeComposeFileName>.yml <command>
+
+Ex:
+docker-compose -f docker-compose-springapp.yml config
+docker-compose -f docker-compose-springapp.yml up -d
+docker-compose -f docker-compose-springapp.yml down
+
+docker-compose-springapp.yml
+
+
+Docker Compose Commands:
+------------------------
+
+Ex:
+docker-compose default file: docker-compose.yml
+docker-compose -f docker-compose.yml up -d 
+docker-compose up -d 
+docker-compose down
+docker-compose config 
+
+Commands:
+  build              Build or rebuild services
+  config             Validate and view the Compose file
+  create             Create services
+  down               Stop and remove resources
+  events             Receive real time events from containers
+  exec               Execute a command in a running container
+  help               Get help on a command
+  images             List images
+  kill               Kill containers
+  logs               View output from containers
+  pause              Pause services
+  port               Print the public port for a port binding
+  ps                 List containers
+  pull               Pull service images
+  push               Push service images
+  restart            Restart services
+  rm                 Remove stopped containers
+  run                Run a one-off command
+  scale              Set number of containers for a service
+  start              Start services
+  stop               Stop services
+  top                Display the running processes
+  unpause            Unpause services
+  up                 Create and start containers
+  version            Show version information and quit
