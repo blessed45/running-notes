@@ -1,8 +1,11 @@
 **Mounting EBS Volume**
 
-to list block = 
+To list block
+             
               lsblk
-              
+
+To check memory              
+             
               df -h
 
 Check if there is any file system in the instance
