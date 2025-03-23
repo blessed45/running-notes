@@ -37,7 +37,7 @@ Mount the volume or partition at the mount point directory you created in the pr
 
            sudo mount /dev/xvdf /data
 
-If the volume has partition, use the following command and specify the partition anme to mount a partition.
+If the volume has partition, use the following command and specify the partition name to mount a partition.
 
             sudo mount /dev/xvdf1 /data 
 
